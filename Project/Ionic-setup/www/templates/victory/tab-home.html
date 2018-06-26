@@ -1,0 +1,100 @@
+<ion-view hide-back-button="true" class="home-page" title="VICTORY" show-tabs>
+	<ion-nav-buttons side="left">
+		<!-- Toggle left side menu -->
+		<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+	<ion-content class="has-footer">
+		<ion-slide-box  class="home-slider" on-slide-changed="slideHasChanged($index)" >
+			<ion-slide ng-if="!enableSliderFromServer" ng-repeat="i in [1, 2, 3, 4, 5]">
+				<div class="slider-img">
+					<img actual-src="img/victory/slider-1.jpg" ng-src="img/placeholder.png" alt="">
+				</div>
+			</ion-slide>
+			<ion-slide ng-if="enableSliderFromServer" ng-repeat="slider in sliderList">
+				<div class="slider-img">
+					<img actual-src="{{slider.src}}" ng-src="" alt="">
+				</div>
+			</ion-slide>
+		</ion-slide-box>
+		<div class="product-list-container">
+			<div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+				<div class="tabs tabs-menu tabs-home">
+					<div class="tab-item active">
+						<a class="tab-item active" href="#">
+							TRENDING
+						</a>
+					</div>
+					<div class="tab-item">
+						<a class="tab-item " href="#">
+							{{$root.appLanguage.PRODUCT_SALE_TEXT}}
+						</a>
+					</div>
+					<div class="tab-item">
+						<a class="tab-item" href="#">
+							{{$root.appLanguage.HOT_DEALS_TEXT}}
+						</a>
+					</div>
+					<div class="tab-item">
+						<a class="tab-item" href="#">
+							{{$root.appLanguage.BEST_SELLER_TEXT}}
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="home" class="product-list">
+			<!-- <div class="product-item" ng-repeat="product in productData" ng-click="openProduct({{product.id}})">
+				<div class="title-item">
+					<h2 class="name name-pro" ng-bind-html="product.name"></h2>
+					<p class="name name-cat" ng-bind-html="product.categories"></p>
+				</div>
+				<div class="img" style="text-align: center;" >
+					<img style="width: 120px; height: 120px;" actual-src="{{product.images[0].src}}" ng-src="img/placeholder.png">
+				</div>
+				<div class="meta text-center">
+					<div class="on-sale" ng-if="product.on_sale">{{$root.appLanguage.PRODUCT_SALE_TEXT}}</div>
+					<div class="price" ng-if="product.price_html" ng-bind-html="product.price_html"></div>
+					<div class="icon-wishlist" ng-if="!isInWishlist" ng-click="addProductToWishlist()">
+						<i class="ion-heart" style="font-size: 18px"></i>
+					</div>
+					<div class="button button-wishlish button-success" ng-if="isInWishlist" ng-click="addProductToWishlist()" >
+						<i class="ion-checkmark-round"></i>
+						{{$root.appLanguage.ADD_TO_WISHLIST_TEXT}}
+					</div>
+					<div class="price" ng-if="!product.price_html" price="{{product.price}}"></div>
+				</div>
+			</div> -->
+
+
+			<!-- test -->
+			<div class="product-item" ng-repeat="product in productData" ng-click="openProduct({{product.id}})">				
+				<div class="img product-img">
+					<img actual-src="{{product.images[0].src}}" ng-src="img/placeholder.png">
+				</div>
+				<div class="meta">
+					<!-- <div class="on-sale" ng-if="product.on_sale">{{$root.appLanguage.PRODUCT_SALE_TEXT}}</div> -->
+					<div class="title-item">
+						<h2 class="name name-pro" ng-bind-html="product.name"></h2>
+						<p class="name name-cat">Men's Shoe</p>
+						<div class="price" ng-if="product.price_html" ng-bind-html="product.price_html"></div>
+						<div class="icon-wishlist" ng-if="!isInWishlist" ng-click="addProductToWishlist()">
+							<i class="ion-heart" ></i>
+						</div>
+						<div class="button button-wishlish button-success" ng-if="isInWishlist" ng-click="addProductToWishlist()" >
+							<i class="ion-checkmark-round"></i>
+							{{$root.appLanguage.ADD_TO_WISHLIST_TEXT}}
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+		<ion-infinite-scroll
+			class="active"
+			immediate-check="false"
+			ng-if="canLoadMoreProductData"
+			on-infinite="loadMoreProductData()"
+			distance="5%">
+		</ion-infinite-scroll>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,6 @@
+<ion-view title="Notification" class="page-notification" hide-tabs>
+	<ion-content>
+		<h1 class="title">{{notification.title}}</h1>
+		<div ng-bind-html="trustAsHtml(notification.content)"></div>
+	</ion-content>
+</ion-view>

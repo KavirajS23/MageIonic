@@ -1,0 +1,104 @@
+<ion-view title="{{$root.appLanguage.PAYMENT_TEXT}}" class="checkout checkout-payment" hide-tabs>
+	<ion-content>
+		<h1 class="title">{{$root.appLanguage.COUPON_TEXT}}</h1>
+	  	<div class="coupon">
+	  		<label class="item item-input">
+				<input type="text" ng-blur="applyCoupon()" ng-model='orderInfo.coupon' placeholder="Coupon Code">
+		  	</label>
+	  	</div>
+
+		<h1 class="title">{{$root.appLanguage.YOUR_ORDER_TEXT}}</h1>
+		<ion-list class="list-order-detail">
+		  	<ion-item>
+				<div class="row header">
+					<div class="col-50">
+						<strong>{{$root.appLanguage.PRODUCT_TEXT}}</strong>
+					</div>
+					<div class="col-50 text-right">
+						<strong>{{$root.appLanguage.TOTAL_TEXT}}</strong>
+					</div>
+				</div>
+		  	</ion-item>
+			<ion-item id="cart_item_{{ product[0] }}" ng-repeat="product in cartInfo.products">
+				<div class="row">
+					<div class="col-50">
+						<strong class="name">{{product[2].name}}</strong> x {{product[1]}}
+						<div class="variable-list" ng-if="product[2].attributes.length>0">
+							<div class="variable" ng-repeat="variable in product[2].attributes">
+								<span>{{variable.name}}</span>: <strong ng-if="!variable.option_name">{{variable.option}}</strong><strong ng-if="variable.option_name">{{variable.option_name}}</strong>
+							</div>
+						</div>
+					</div>
+					<div class="col-50 text-right">
+						<span class="price" price="{{product[2].price}}"></span>
+					</div>
+				</div>
+		  	</ion-item>
+		  	<ion-item class="subtotal">
+				<div class="row">
+					<div class="col-50">
+						<strong>{{$root.appLanguage.SUBTOTAL_TEXT}}</strong>
+					</div>
+					<div class="col-50 text-right">
+						<span class="price" price="{{cartSubTotal}}"></span>
+					</div>
+				</div>
+		  	</ion-item>
+
+		  	<ion-item class="discount">
+				<div class="row">
+					<div class="col-50">
+						<strong>Discount</strong>
+					</div>
+					<div class="col-50 text-right">
+						- <span class="price" price="{{discountCost}}"></span>
+					</div>
+				</div>
+		  	</ion-item>
+			
+			<ion-item class="shipping">
+				<div class="row">
+					<div class="col-50">
+						<strong>{{$root.appLanguage.SHIPPING_TEXT}}</strong>
+					</div>
+					<div class="col-50 text-right">
+						<span class="price" price='{{shippingCost}}'></span>
+					</div>
+				</div>
+		  	</ion-item>
+			
+		  	<ion-item class="total">
+				<div class="row">
+					<div class="col-50">
+						<strong>{{$root.appLanguage.TOTAL_TEXT}}</strong>
+					</div>
+					<div class="col-50 text-right">
+						<span class="price" price='{{cartTotal}}'></span>
+					</div>
+				</div>
+		  	</ion-item>
+		</ion-list>
+		
+		<h1 class="title">{{$root.appLanguage.SHIPPING_METHOD_TEXT}}</h1>
+		<ion-list>
+			<ion-radio class="shipping-method-radio"  ng-click="changeShippingMethod()" name="shipping" ng-repeat="shippingMethod in listShipping" ng-model="orderInfo.shipping" ng-value="shippingMethod.id">
+		  		<span class="shipping_method_title">{{shippingMethod.title}}</span>
+		  		<span ng-if="shippingMethod.cost > 0" class='shipping_method_price_container'>
+		  			: <span class='shipping_method_price' price='{{shippingMethod.cost}}'></span>
+		  		</span>
+			</ion-radio>
+		</ion-list>
+
+		<h1 class="title">{{$root.appLanguage.PAYMENT_METHOD_TEXT}}</h1>
+		<ion-list>
+			<ion-radio name="payment" ng-model="orderInfo.payment" ng-repeat="paymentMethod in listPayment" ng-value="paymentMethod.id">
+		  		{{paymentMethod.title}}
+				<div class="description" ng-if="orderInfo.payment==paymentMethod.id">{{paymentMethod.description}}</div>
+			</ion-radio>
+		</ion-list>
+			
+	</ion-content>
+	<ion-footer-bar align-title="center">
+		<button class="button button-positive pay" ng-click='createOrder()'>{{$root.appLanguage.PLACE_ORDER_TEXT}}</button>
+	</ion-footer-bar>
+</ion-view>

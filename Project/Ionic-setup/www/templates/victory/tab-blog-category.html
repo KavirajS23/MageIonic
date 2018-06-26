@@ -1,0 +1,31 @@
+<ion-view>
+	<ion-nav-title>{{pageTitle}}</ion-nav-title>
+	<ion-content class="has-footer blog-container">
+		<ion-refresher
+				pulling-text="Pull to refresh..."
+				on-refresh="refreshData()">
+		</ion-refresher>
+		<div class="blog-list clearfix">
+			<div class="blog-item clearfix" ng-repeat="blog in blogData">
+				<div class="blog-content">
+					<div class="title" ng-bind-html="blog.post_title" ng-click="openBlog({{blog.id}})"></div>
+					<div class="post-meta">
+						<span>{{blog.post_date}} - {{blog.post_author}}</span>
+					</div>
+                                        <img  ng-src="{{blog.post_image}}"  >
+					<div class="post-excerpt" ng-bind-html="removeReadmore(blog.post_excerpt)"></div>
+				</div>
+				<div class="blog-action">
+					<div ng-click="openBlog({{blog.id}})">
+						Read more <i class="icon ion-chatbubble"></i> {{blog.post_comment.length}}
+					</div>
+				</div>
+			</div>
+		</div>
+		<ion-infinite-scroll
+				ng-if="canLoadMoreData"
+				on-infinite="loadMoreData()"
+				distance="5%">
+		</ion-infinite-scroll>
+	</ion-content>
+</ion-view>

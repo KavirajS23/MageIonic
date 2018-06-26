@@ -1,0 +1,244 @@
+.home-logo{
+	max-width: 100px;
+	max-height: 33px;
+	vertical-align: middle;
+}
+.list-item{
+	.title{
+		height: 21px;
+		overflow: hidden;
+		margin-bottom: 10px;
+		position: relative;
+		p{
+			margin:0;
+			font-size: 17px;
+			margin-left: 25px;
+			color: #000;
+			a{
+				float: right;
+				color: #999999;
+				text-decoration: none;
+				font-size: 11px;
+				margin-right: 11px;
+				i{
+					margin-left: 3px;
+				}
+			}
+		}
+		span{
+			border:11px solid #37e7bf;
+			position: absolute;
+			top:4px;
+
+		}
+	}
+	.items{
+		.row{
+			margin-bottom: 15px;
+			padding:0 30px;
+			padding-left:10px;
+		}
+		.col.col-33{
+			height: 98px;
+			background:#fff;
+			text-align: center;
+			padding-top:24px;
+			margin-right: 10px;
+			.ion{
+				font-size: 40px;
+			}
+			.item-home{
+				margin-bottom: 10px;
+				color:#000;
+			}
+		}
+	}
+}
+
+.home-page{
+	.home-title{
+		font-size: 13px;
+		text-transform: uppercase;
+		margin: 0 0 15px 5px ;
+		color: #222222;
+		border-bottom: 2px solid #2de6a7;
+	    padding-bottom: 17px;
+        padding-top: 17px;
+        width: 130px;
+        text-align: center;
+	}
+	
+	.category-list{
+		margin-top: 30px;
+	}
+	
+	.home-slider{
+		.slider-img{
+			img{
+				width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+		}
+		.slider-pager{
+			text-align: left;
+			margin-left: 10px;
+			.slider-pager-page{
+				color: #000000;
+				opacity: 0.1;
+				width: 8px;
+				&.active{
+					color: #fff;
+					opacity: 1;
+					.icon:before{
+						content: "\f209";
+					}
+				}
+			}
+		}
+	}
+
+	.ads-text{
+		color: #fff;
+		background: $main-color url(../img/topgears/pattern-icon.png);
+		background-size: cover;
+		position: relative;
+		.inner{
+			padding: 5px 5px;
+			.content{
+				font-size: 18px;
+				line-height: 21px;
+			}
+			.title{
+				color: #000;
+				font-size: 14px;
+				padding-top: 3px;
+				border: 1px solid #fff;
+				padding: 7px;
+				text-align: center;
+			}
+			.price{
+				color: #f60c2b;
+			}
+			span{
+				color: rgba(18, 49, 65, 0.5);
+			}
+			i{
+				margin-right: 5px;
+				color: #fff;
+			}
+		}
+	}
+	.title-item{
+		padding:12px;
+	}
+	.product-list-container {
+		position: relative;
+	}
+	.product-list-slider-style{
+		height: 250px;
+		padding: 20px 15px;
+		.product-item-slider-style{
+			width: 33.33333%;
+			position: relative;
+			display: block;
+			padding: 0 5px;
+			text-decoration: none;
+			float: left;
+			margin-bottom: 10px;
+			border: 0;
+			background: transparent;
+			margin-bottom: 10px;
+			img{
+				max-width: 100%;
+				display: block;
+				margin: 0 auto 5px;
+			}
+			.meta{
+				margin-top: 10px;
+			}
+		}
+		.swiper-container-horizontal > .swiper-pagination{
+			bottom: 30px;
+		}
+		.swiper-pagination-bullet{
+			border: 1px solid #000;
+			background: #fff;
+		}
+		.swiper-pagination-bullet-active{
+			background: rgba(0,0,0,0.5);
+			border-color: rgba(0,0,0,0.3);
+		}
+	}
+}
+.category-list,
+.product-item-slider-style {
+	.category{
+		color: #bbbbbb;
+		text-transform: uppercase;
+		font-size: 10px;
+	}
+	.name{
+		font-size: 14px;
+		font-weight: 300;
+		margin-bottom: 0;
+		margin-top: 0;
+		text-transform: capitalize;
+		a{
+			color: #222222;
+			text-decoration: none;
+		}
+	}
+	.price{
+		font-weight: 400;
+		color: #de242d;
+		font-size: 16px;
+		letter-spacing: -1px;
+		del,ins{
+			display: inline-block;
+			padding: 0 2px;
+		}
+		del{
+			font-weight: 400;
+			font-size: 0.8em;
+			opacity: 0.6;
+		}
+		ins{
+			text-decoration: none;
+		}
+	}
+
+}
+.tabs-top > .tabs, .tabs.tabs-top{
+		background-color:#fff!important;
+		border-bottom-width: 0px!important;
+}
+.tabs-top > .tabs.tabs-home{
+	top:16%!important;
+}
+.tabs-menu{
+	height:40px!important;
+}
+.tabs-striped.tabs-color-light .tab-item.active{
+	color:#000!important;
+	text-transform: uppercase!important;
+}
+.tabs-top.tabs-striped .tab-item.active{
+	border-color:#32e6b4!important;
+	border-bottom-width:4px!important;
+	a{
+		border-color:#fff!important;
+		margin:-5px!important;
+	}
+}
+.tabs-top.tabs-striped .tab-item{
+	font-size:11px!important;
+	a{
+		border-color:#fff!important;
+		margin:-5px!important;
+	}
+}
+.tabs-striped.tabs-color-light .tab-item{
+	color:#bfbfbf!important;
+	text-transform: uppercase;
+}

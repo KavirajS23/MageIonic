@@ -1,0 +1,668 @@
+.is-modal{
+	.bar-header{
+		.button{
+			color: $text-color;
+			padding: 0 10px;
+			font-size: 28px;
+		}
+	}
+
+	.modal-inner{
+		// position: relative;
+	}
+}
+
+
+// Product Info Modal
+.modal-product-info{
+	// top: 100px;
+	background: rgba(#fff, 0.95);
+
+	.bar-header{
+		.button{
+			i{
+				color: #fff;
+				font-size: 29px;
+			}
+		}
+	}
+
+	ion-tabs{
+		.tab-title{
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+
+		.description{
+			padding: 10px 0;
+		}
+		
+	}
+	.description,
+	.reviews{
+		.bar-footer{
+			padding: 0;
+			border: 0;
+			padding-top:70px;
+			background:#eff5f6;
+			#addtocart{
+				border-radius: 50px;
+				width:245px;
+				background: linear-gradient(135deg, #25e393 0%, #4bedf1 100%);
+				margin-top: 17px;
+				margin:0 auto;
+				display: block;
+				font-size: 13px!important;
+				letter-spacing: 3px;
+			}
+			.button{
+				margin: 0;
+				text-transform: uppercase;
+				font-weight: 700;
+				font-size: 16px;
+				[class*="ion-"]{
+					display: inline-block;
+					margin-right: 10px;
+					font-size: 16px;
+				}
+			}
+		}
+	}
+	.reviews{
+		.review-item{
+			padding: 10px 0;
+			border-bottom: 1px solid $border-color;
+			@include clearfix();
+			&:last-child{
+				border-bottom: 0;
+			}
+			.avatar{
+				float: left;
+				max-width: 70px;
+				margin-right: 25px;
+				img{
+					width: 100%;
+					border-radius:50%;
+				}
+			}
+
+			.content{
+				margin-left: 90px;
+				.star-rating{
+					// margin-bottom: 5px;
+				}
+				.name{
+					font-weight: 400;
+				}
+
+				.comment{
+					margin-top: 5px;
+					font-size: 13px;
+				}
+				.date{
+					font-size: 11px;
+				}
+			}
+		}
+	}
+}
+
+
+// Modal Login & Register
+
+.modal-login,
+.modal-register,
+.login-form{
+	background: url(../img/victory/bitmap.png) no-repeat;
+	background-size: cover;
+	padding: 0!important;
+	margin-top: 0!important;
+	border:none;
+	max-height: auto!important;
+	
+	.model-content{
+		padding: 0 17px!important;
+		margin: 0!important;
+		height: auto!important;
+		.logo{
+			text-align: center;
+			display: block;
+			img{
+				margin-top: 108px;
+				width: 90px;
+				height: 106px;
+			}		
+		}
+	}
+	ion-content{
+		padding: 0;
+		margin:0;
+		border: none;
+		.form-action{
+			padding:0!important;
+			margin:0;
+			label{
+				padding:0!important;
+				color: #fff;
+				font-size: 11px;
+				font-weight:100;
+			}
+			.invalid-required{
+				margin-top: 0px;
+				margin-bottom: 20px;
+				color: #fff;
+			}
+			.item-input{
+				border-color: transparent;
+				background-color: #ffffff;
+				padding: 6px 0px;
+				box-shadow: inset 0 -1px 0 #e8eaee;
+				background:transparent;
+				border: 0 solid #fff;
+				margin-bottom: 0px!important;
+				::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+	   					color: #8e9098;
+	   					 font-size: 14px;
+						font-weight: 400;
+						letter-spacing: -0.4px;
+						line-height: 19px!important;
+	   					}
+			}
+			.input-first{
+				border-radius: 4px 4px 0 0;	
+			}
+			.item-input.login{
+				padding:0px;
+				margin-bottom: 0px;	
+				border-bottom: 1px solid #fff;
+				box-shadow: inset 0 -1px 0 #e8eaee;
+				input{
+					box-shadow: inset 0 -1px 0 #e8eaee;				
+				}
+				.input-img{
+					background:#fff;
+					padding-left: 13px;
+					padding-top: 6px;
+					height: 55px;
+					color: #8e9098;
+					font-size: 14px;
+					font-weight: 400;
+					letter-spacing: -0.4px;							
+				}
+				.input-forgot{
+					border-radius: 4px 4px 0 0;	
+				}
+				.input-img::-webkit-input-placeholder{
+					color: #8e9098;
+					line-height: 19px;
+					font-size: 14px;
+					font-weight: 400;
+					letter-spacing: -0.4px;
+				}
+				.input-img::-moz-input-placeholder{
+					color: #8e9098;
+					font-size: 14px;
+					font-weight: 400;
+					letter-spacing: -0.4px;
+				}		
+			}
+
+			.button-action{
+				border-radius: 0 0 4px 4px;
+				padding: 0;
+				font-size: 16px;
+				font-weight: bold;
+				letter-spacing: -0.6px;
+				border:none!important;
+				text-transform: capitalize!important;
+			}
+		}
+
+		
+		.or{
+			text-align: center;
+			margin: 20px auto;
+			position:relative;
+			overflow: hidden;
+			width: 66%;
+
+			&:before{
+				border-bottom:1px solid #fff;
+				content:"";
+				width: 1000px;
+			    position: absolute;
+			    bottom: 8px;
+			    margin-left: 20px;
+			}
+			&:after{
+				border-bottom:1px solid #fff;
+				content:"";
+				width: 10000px;
+			    position: absolute;
+			    bottom: 8px;
+			    right: 0px;
+			    margin-right: 112px;
+			}
+			span{
+				color: #fff;			
+			}
+			
+		}
+		.divider{
+			width: 100%;
+			border-bottom: 1px solid rgba(255,255,255,0.1);
+			margin: 20px 0;
+		}
+		button.button-block{
+			border:none!important;
+			font-size: 16px!important;
+			height: 55px!important;
+			margin: 0!important;
+			background: url(../img/victory/button.png) no-repeat;
+			background-size: cover!important;
+			color: #fff!important;
+			text-transform: capitalize!important;
+			font-weight: 600!important;
+			width:100% !important;
+			padding: 0!important;
+			text-align:center!important;
+		}
+
+		.agree-condition{
+			font-size: 14px;
+			color: #fff;
+			text-align: left;
+			width: 100%;
+			float: left;
+			margin-bottom: 40px;
+		}
+		.buttons{
+			text-align: center;
+			font-size: 14px;
+			font-weight: 100;
+			color: #fff;
+			margin-top: 0;
+			&.sign-up{
+				margin-top: 20px!important;
+			}
+			.button{
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				font-size: 16px;
+				display: inline-block;
+				&.button-close{
+					font-size: 14px;
+					margin-top: 40px;
+					text-transform: initial;
+					background-color: transparent;
+					color: #fff;
+					width: 90%;
+					
+					.icon{
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+	}
+	.scroll-content.ionic-scroll{
+		padding: 75px 30px 30px 30px;
+	}
+}
+
+.modal-login,
+.login-form{
+	ion-content{
+		.modal-login-box{
+			margin-bottom: 50px!important;
+		}
+		.create-user-action{
+
+			.button,
+			.text{
+				display: inline-block;
+				font-size: 12px;
+				color: #fff;
+			}
+			.text{
+				display: block;
+				text-transform: capitalize;
+			}
+			.button-register{
+				background-color: transparent;
+
+			}		
+			.forgot-password{
+				color: #ffffff!important;
+				font-size: 12px!important;
+				text-align: right!important;
+				font-weight: 400!important;
+				letter-spacing: -0.2px!important;
+			}
+			.creat{
+				color: #ffffff!important;
+				font-size: 12px!important;
+				text-align: left!important;
+				font-weight: 400!important;
+				letter-spacing: -0.2px!important;
+			}
+		}
+	}
+}
+
+.add-review{
+	.list{
+		padding-top: 35px;
+		padding-bottom:155px;
+	}
+	.your-rate{
+		margin-top: 25px;
+		.ionic_ratings .icon{
+			font-size: 24px;
+			margin: 0 3px;
+		}
+	}
+
+	.item-input{
+	}
+	.info-review{
+		height: 48px;
+	}
+	
+	.invalid-required{
+		margin-top: 8px;
+		margin-bottom: 20px;
+		color: #fff;
+	}
+	.button-clear{
+		color: #fff;
+	}
+	.footer-bar{
+		#addtocart{
+			border-radius: 50px;
+			width:245px;
+			background: linear-gradient(135deg, #25e393 0%, #4bedf1 100%);
+			margin-top: 17px;
+			margin:0 auto;
+			display: block;
+			width: 170px;
+    		text-transform: uppercase;
+  			letter-spacing: 2px;
+  			font-size: 13px!important;
+		}
+	}
+}
+.checkout-login-page{
+	padding:0!important;
+	margin:0!important;
+	.model-content-checkout{
+		padding:0 17px!important;
+		margin:0!important;
+		.logo{
+			img{
+				width: 90px;
+				height: 106px;
+			}
+		}
+		.modal-login-box{
+			.form-action-checkout{
+				padding:0!important;
+				margin:0!important;
+				.button-action{
+					margin-top: 0;
+					button.button-block{
+						letter-spacing: -0.6px!important;
+						border:none!important;
+						font-size: 16px!important;
+						height: 55px!important;
+						margin: 0!important;
+						background: url(../img/victory/button.png) no-repeat;
+						background-size: cover!important;
+						color: #fff!important;
+						text-transform: capitalize!important;
+						font-weight: 600!important;
+						width:100% !important;
+						padding: 0!important;
+						text-align:center!important;
+					}
+				}
+			}
+		}
+	}
+	
+	
+}
+
+.modal-register{
+	.model-content{
+		.logo-regis{
+			height: 30px;
+			margin:50px 0!important;
+			padding: 0!important;
+			button{
+				float: left;
+				background: none;
+				border:none;
+				color: #fff;
+				font-size: 30px;
+				line-height: 30px;
+			}
+			h2{
+				font-size: 16px;
+				font-weight: 600;
+				letter-spacing: -0.6px;
+				line-height: 30px;
+				color: #fff;
+				text-align: center;
+				margin-top: 0px;	
+			}
+		}
+		.modal-regis-box{
+			padding-top:4px!important;
+			.item-input{
+				box-shadow: inset 0 -1px 0 #e8eaee!important;
+				.input-img{
+					box-shadow: inset 0 -1px 0 #e8eaee!important;
+				}
+			}
+		}
+	}
+}
+
+
+.modal-login-box{
+	font-size: 14px;
+	padding-top:76px;
+	border:none;
+	max-height: auto!important;
+	.social-action{
+		margin-bottom: 25px;
+		text-align: center;
+		.social-fb, .social-gg{
+			width: 245px;
+			display: inline-block;
+			text-align: center;
+			padding: 14px 0;
+			background: #d6321e;
+			position: relative;	
+			overflow: hidden;
+			height: 50px;
+			a{
+				font-size: 10px;	
+				color: #ffffff;
+				text-decoration: none;
+				&:hover{
+					opacity: 0.8;
+				}
+				span{
+					font-size: 13px!important;
+					line-height: 12px;
+					color: rgba(255, 255, 255, 0.5);
+					width: 140px;
+					text-align: left;
+					letter-spacing: 1px;
+					&.text{
+						font-size: 15px;
+						color: #ffffff;
+						line-height: 15px;
+						font-weight: 100;
+					}
+				}
+			}
+			.icon{
+				position: absolute;
+			    left: 12px;
+			    top: 12px;
+			    font-size: 16px;
+			    width: 10px;
+			    &:after{
+			    	position: absolute;
+			    	content: "";
+			    	width: 1px;
+			    	height: 50px;
+					right: -13px;
+					top: -13px;
+			    	background: rgba(255,255,255,0.1);
+			    }
+			}
+		}
+		.social-fb{
+			background: #2654ad;
+			margin-bottom: 5px;
+		}
+		.social-gg{
+		}
+	}
+	&.modal-forgot-login{
+		.input-first{
+			border-radius: 4px 4px 0 0;
+		}
+		color: #ffffff;
+		h3{
+			margin-bottom: 30px;
+			font-weight: 300;
+			font-size: 24px;
+			color: #fff;
+		}
+		p{
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 22px;
+		}
+	}
+}
+.tabs-footer{
+	.tab-nav{
+		height: 60px;
+		box-shadow: 0 -1px 0 rgba(22, 24, 32, 0.15);
+		background-color: #ffffff;
+		.icon{
+			font-size: 20px;
+		}
+		.tab-title{
+			color: #8e9098;
+			font-size: 11px;
+			font-weight: 400;
+			letter-spacing: -0.35px;
+			line-height: 13px;
+			margin-bottom: 5px!important;
+		}
+		.badge{
+			border-radius: 10px;
+			background-color: #5383ff;
+		}
+		.tab-item-active{
+			color:#5383ff!important;
+			.tab-title{
+				color:#5383ff!important;
+			}
+		}
+	}
+}
+.copyrights{
+	text-align: center;
+	margin-top: 200px;
+	.text{
+		a{
+			color:#38e8c2;
+		}
+	}
+}
+.button-modal{
+	width: 100%;
+	margin-top: 50px;
+	border-radius: 50px;
+	color: #fff;
+	background-color:#fff!important;
+	text-transform: uppercase;
+}
+
+@media (max-width: 320px){
+	.checkout-login-page{
+		.model-content-checkout{
+			.logo{
+				img{
+					margin-top: 50px!important;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 320px) and (max-height: 480px){
+	.modal-login{
+		.model-content{
+			.logo{
+				img{
+					margin-top: 20px!important;
+				}
+			}
+			.modal-login-box{
+				margin-bottom: 50px!important;
+			}
+		}
+	}
+	.checkout-login-page{
+		.model-content-checkout{
+			.logo{
+				img{
+					margin-top: 0!important;
+				}
+			}
+			.modal-login-box{
+				margin-bottom: 30px!important;
+			}
+		}
+	}
+}
+@media(min-width: 330px) and (max-width: 390px){
+	.modal-login{
+		.model-content{
+			.modal-login-box{
+				margin-bottom: 120px!important;
+			}
+		}
+	}
+	.checkout-login-page{
+		.model-content-checkout{
+			.modal-login-box{
+				margin-bottom: 80px!important;
+			}
+		}
+	}	
+}
+@media(min-width: 400px){
+	.modal-login {
+		.model-content {
+			.modal-login-box{
+				margin-bottom: 180px!important;
+			}
+		}
+	}
+	.checkout-login-page{
+		.model-content-checkout{
+			.modal-login-box{
+				margin-bottom: 170px!important;
+			}
+		}
+	}
+}

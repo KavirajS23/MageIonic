@@ -1,0 +1,29 @@
+<ion-view hide-tabs>
+    <ion-nav-title>{{pageTitle}}</ion-nav-title>
+    <ion-content>
+        <div class="blog-single-item">
+            <div class="blog-content">
+                <div class="title" ng-bind-html="blogDetail.post_title"></div>
+                <div class="post-meta">
+                    <span>{{blogDetail.post_date}} - {{blogDetail.post_author}}</span>
+                </div>
+                <div class="post-excerpt" ng-bind-html="blogDetail.post_content"></div>
+            </div>
+            <div class="blog-action">
+                <!--<div>{{$root.appLanguage.SHARE_TEXT}}</div>-->
+                <div ng-click="openAddComment()">{{$root.appLanguage.COMMENT_TEXT}}</div>
+            </div>
+            <div class="blog-comments">
+                <div class="comment-item" ng-repeat="comment in blogDetail.post_comment">
+                    <div class="avatar">
+                        <img actual-src="{{ comment.link_avatar }}" ng-src="img/placeholder.png">
+                    </div>
+                    <div class="comment-content">
+                        <div class="author">{{comment.comment_author}} - <span class="date" date="{{ comment.date_created }}"></span></div>
+                        <div class="content">{{unescapeHtml(comment.comment_content)}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

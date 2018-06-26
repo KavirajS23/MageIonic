@@ -1,0 +1,120 @@
+<ion-view hide-back-button="true" class="home-page" title="TOPGEARS" show-tabs>
+	<ion-nav-buttons side="left">
+		<!-- Toggle left side menu -->
+		<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+	<ion-content class="has-footer" style="background: #eff5f6">
+		<ion-slide-box  class="home-slider" on-slide-changed="slideHasChanged($index)">
+			<ion-slide>
+				<div class="slider-img">
+					<img actual-src="img/topgears/slider-1.png" ng-src="img/placeholder.png" alt="">
+				</div>
+			</ion-slide>
+			<ion-slide>
+				<div class="slider-img">
+					<img actual-src="img/topgears/slider-1.png" ng-src="img/placeholder.png" alt="">
+				</div>
+			</ion-slide>
+			<ion-slide>
+				<div class="slider-img">
+					<img actual-src="img/topgears/slider-1.png" ng-src="img/placeholder.png" alt="">
+				</div>
+			</ion-slide>
+			<ion-slide>
+				<div class="slider-img">
+					<img actual-src="img/topgears/slider-1.png" ng-src="img/placeholder.png" alt="">
+				</div>
+			</ion-slide>
+		</ion-slide-box>
+		
+		<div class="product-list-home2">
+			<div class="row">
+				<div class="col col-50">
+					<div style="margin-bottom: 10px" class="img img-home2" style="text-align: center;" >
+						<img src="img/topgears/item1.png" alt="">
+					</div>
+					<div class="img img-home2" style="text-align: center;" >
+						<img src="img/topgears/item3.png" alt="">
+					</div>
+				</div>
+				<div class="col col-50">
+					<div style=" margin-bottom: 10px" class="img img-home2" style="text-align: center;" >
+						<img src="img/topgears/item2.png" alt="">
+					</div>
+					<div  class="img img-home2" style="text-align: center;" >
+						<img src="img/topgears/item4.png" alt="">
+					</div>
+				</div>		
+			</div>
+		</div>
+		<div class="list-item">
+			<div class="title">
+				<p>Popupar Categories <a href="">See All<i class="fa fa-angle-double-right" aria-hidden="true"></i></a></p>
+				<span></span>
+
+			</div>
+			<div class="items">
+				<div class="row">
+					<div class="col col-33">
+						<div class="item-home">
+							<a href="">
+								<i class="ion ion-iphone"></i>
+							</a>
+							<p>Phones</p>
+						</div>
+					</div>
+					<div class="col col-33">
+						<div class="item-home">
+							<a href="">
+								<i class="ion ion-ios-clock-outline"></i>
+							</a>
+							<p>Electronics</p>
+						</div>
+					</div>
+					<div class="col col-33">
+						<div class="item-home">
+							<a href="">
+								<i class="ion ion-wrench"></i>
+							</a>
+							<p>Tools</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col col-33">
+						<div class="item-home">
+							<a href="">
+								<i class="ion ion-iphone"></i>
+							</a>
+							<p>Phones</p>
+						</div>
+					</div>
+					<div class="col col-33">
+						<div class="item-home">
+							<a href="">
+								<i class="ion ion-ios-game-controller-a"></i>
+							</a>
+							<p>Phones</p>
+						</div>
+					</div>	
+					<div class="col col-33">
+						<div class="item-home">
+							<a href="">
+								<i class="ion ion-laptop"></i>
+							</a>
+							<p>Phones</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<ion-infinite-scroll
+			class="active"
+			immediate-check="false"
+			ng-if="canLoadMoreProductData"
+			on-infinite="loadMoreProductData()"
+			distance="5%">
+		</ion-infinite-scroll>
+	</ion-content>
+</ion-view>

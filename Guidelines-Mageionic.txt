@@ -1,0 +1,59 @@
+=======================================================================================================================================================================
+
+====================================================================== Guidelines - Mageionic =========================================================================
+
+=======================================================================================================================================================================
+
+Configuring Mageionic Environment
+
+	Plugin Config with Magento
+
+		i) Configuring Magento by Extracting the magento.zip into web server.
+
+		ii) For Ionic framework, install the NodeJS stable version, and then run the following commands.
+
+			* npm install -g ionic cordova
+
+		iii) Move the plugin file  (i.e) Inspicious folder into magento's code directory
+		
+			* magento working directory/code/Inspicious
+
+		iv) Enabling the inspicious plugin in the magento admin panel
+
+			* Go to System -> Web setup wizard -> component manager.
+
+		v) After the enabling the plugin, run the magento cache upgrade 
+	
+			*$magento setup:upgrade.
+
+		vi) now the plugin has been successfully enabled to communicate with Ionic framework.
+
+	
+	Plugin Config with Ionic
+	
+		i) Run the following commands in the ionic-setup directory to configure the api with ionic framework
+
+			* npm install
+
+			* bower install
+
+			* ionic setup sass
+
+			* ionic state restore --plugins
+
+		ii) now run the ionic serve command to view the output in the ionic lab.
+
+			* ionic serve
+
+
+=======================================================================================================================================================================
+
+======================================================================= Supporting SOftwares ==========================================================================
+
+=======================================================================================================================================================================
+
+		* Wamp server
+
+		* Apache Jmeter
+
+		* Nodejs v8.9.3

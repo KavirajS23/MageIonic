@@ -1,0 +1,134 @@
+.cart-page{
+	.cart-list-item{
+		.cart-item{
+			padding: 5px;
+			position: relative;
+			.row{
+				padding-bottom: 0;
+			}
+
+			.close{
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				// @include opacity(0.6);
+				opacity: 0.4;
+				&:hover{
+					opacity: 1;
+				}
+			}
+			img{
+				max-width: 100%;
+			}
+
+			.product-info{
+				margin-left: 15px;
+				padding-bottom: 30px;			
+				.name{
+					font-weight: 700;
+					color: $title-color;
+					white-space: normal;
+					margin-right: 20px;
+					overflow: hidden;
+		   			white-space: nowrap;
+		  			text-overflow: ellipsis;
+				}
+				.quantity{
+					font-size: 13px;
+					margin-top: 5px;
+					display: inline-block;
+					.item-input {
+						width: 40px;
+						padding: 0px;
+						text-align: center;
+						display: inline-block;
+						float: left;
+						input {
+							padding: 0;
+							text-align: center;
+						}
+					}
+					.single-price-container {
+						display: inline-block;
+						float: left;
+						margin-top: 7px;
+						margin-left: 5px;
+					}
+				}
+				.total{
+					position: absolute;
+					left: 10px;
+					bottom: 10px;
+					font-weight: 700;
+					font-size: 17px;
+				}
+
+				.divider{
+					&:after{
+						content: "";
+						display: block;
+						width: 100px;
+						height: 1px;
+						background: $border-color;
+						margin-top: 10px;
+						margin-bottom: 10px;
+					}
+				}
+
+				.variable{
+					font-size: 14px;
+					span{
+						text-transform: capitalize;
+					}
+					strong{
+						text-transform: uppercase;
+					}
+				}
+			}
+		}
+	}
+
+	.has-footer{
+		bottom: 66px;
+	}
+
+	// Footer
+	.bar-footer{
+		height: 66px;
+		border-top-color: #ddd;
+		.row{
+			padding: 0;
+		}
+		.count-cart{
+			line-height: 60px;
+			font-size: 15px;
+			// font-weight: 700;
+			color: $text-color;
+			padding-left: 10px;
+		}
+		.button-action{
+			text-align: right;
+			.subtotal{
+			    font-weight: 700;
+			    display: block;
+			    font-size: 17px;
+			    margin: 3px
+			}
+			.button{
+				min-height: 27px;
+				height: 27px;
+				width: 100px;
+				line-height: 25px;
+				font-size: 15px;
+				&.disable{
+					pointer-events: none;
+					// @include opacity(0.3);
+					background: #000;
+					opacity: 0.3;
+				}
+			}
+		}
+	}
+}
+
+	

@@ -1,0 +1,72 @@
+<ion-view title="{{$root.appLanguage.CART_TEXT}}" class="cart-page" hide-tabs>
+	<ion-content class="cart-content">
+		<ion-list class="cart-list-item" can-swipe="true">
+			<div class="row" ng-if="cartEmpty">
+				<p>{{$root.appLanguage.YOUR_CART_IS_EMPTY_TEXT}}.</p>
+			</div>
+			<div class="total">
+				<span class="total-title">TOTAL PRICE</span><span price="{{cartTotal}}" class="total-price"></span>
+			</div>
+		  	<!-- <ion-item class="cart-item animated" id="cart_item_{{ product[0] }}" ng-repeat="product in cartInfo.products">
+		    	<div class="row">
+		    		<div class="col-25">
+		    			<img ng-if="product[2].image" actual-src="{{product[2].image[0].src}}" ng-src="img/placeholder.png">
+						<img ng-if="product[2].images" actual-src="{{product[2].images[0].src}}" ng-src="img/placeholder.png">
+		    		</div>
+		    		<div class="col-75">
+			    		<div class="product-info">
+		    				<div class="name">{{product[2].name}}</div>
+			    			<div class="quantity">
+								<label class="item item-input">
+									<input type="number" min="1" value="{{product[1]}}" ng-model="cartUpdatedProduct[product[0]]" ng-change="updateCart({{product[0]}})">
+								</label>
+			    				 <div class="single-price-container"> <span class="amount" price="{{product[2].price * product[1]}}"></span></div>
+			    			</div>
+			    			<div class="divider" ng-show="product[2].attributes.length>0"></div>
+			    			<div class="variable" ng-repeat="variable in product[2].attributes">
+			    				<span>{{variable.name}}</span>: <strong ng-if="!variable.option_name">{{variable.option}}</strong><strong ng-if="variable.option_name">{{variable.option_name}}</strong>
+			    			</div>
+			    			</div>
+		    			</div>
+		    		</div>
+		    	</div>
+				<ion-option-button style="background: #f60c2b;" ng-click="removeProductFromCart({{product[0]}})">
+					<i class="icon ion-trash-a"></i>
+				</ion-option-button>
+		  	</ion-item> -->
+		  	<ion-item class="cart-item animated" id="cart_item_{{ product[0] }}" ng-repeat="product in cartInfo.products">
+		    	<div class="row">
+		    		<div class="col-25 text-left">
+		    			<img ng-if="product[2].image" actual-src="{{product[2].image[0].src}}" ng-src="img/placeholder.png">
+						<img ng-if="product[2].images" actual-src="{{product[2].images[0].src}}" ng-src="img/placeholder.png">
+		    		</div>
+		    		<div class="col-75">
+			    		<div class="product-info">
+		    				<div class="name">{{product[2].name}}</div>
+		    				<div class="size-cart" ng-repeat="variable in product[2].attributes"><span>{{variable.name}}</span>: <strong ng-if="!variable.option_name">{{variable.option}}</strong><strong ng-if="variable.option_name">{{variable.option_name}}</strong></div>
+	    					<div class="single-price-container"> <span class="amount" price="{{product[2].price * product[1]}}"></span></div>
+	    				</div>
+	    			<div class="quantity text-right">
+	    				<button class=""><i class="icon ion-ios-plus-empty"></i></button>
+						<label class="item item-input">
+							<input type="number" min="1" value="{{product[1]}}" ng-model="cartUpdatedProduct[product[0]]" ng-change="updateCart({{product[0]}})">
+						</label>
+						<button class=""><i class="icon ion-ios-minus-empty"></i></button>	 
+	    			</div>
+	    			</div>
+	    		</div>
+	    	</div>
+			<ion-option-button  ng-click="removeProductFromCart({{product[0]}})" class="delete-cart">
+				<i class="icon ion-trash-a"></i>
+			</ion-option-button>
+		  	</ion-item>
+		</ion-list>
+	</ion-content>
+	<ion-footer-bar align-title="center">
+		<button class="button button-positive button-checkout" ng-class="cartTotal > 0 ? '' : 'disable'" ng-click="openCheckout()">
+		Proceed to payment
+		<!-- {{$root.appLanguage.NEXT_TEXT}} -->
+		</button>
+	</ion-footer-bar>
+	
+</ion-view>

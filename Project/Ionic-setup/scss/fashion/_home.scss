@@ -1,0 +1,72 @@
+.home-logo{
+	max-width: 100px;
+	max-height: 33px;
+	vertical-align: middle;
+}
+
+.home-page{
+
+	.home-title{
+		text-align: center;
+		font-size: 16px;
+		text-transform: uppercase;
+		margin: 20px 0 0;
+
+	}
+	
+	.category-list{
+		margin-top: 30px;
+	}
+
+	.home-slider{
+		.slider-img{
+			img{
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+		}
+
+		.slider-pager{
+			.slider-pager-page{
+				color: $main-color;
+				opacity: 1;
+				.icon{
+					&:before{
+						content: "\f401";
+					}
+				}
+				&.active{
+					.icon:before{
+						content: "\f400";
+					}
+				}
+			}
+		}
+	}
+
+	.ads-text{
+		color: #fff;
+		background: $main-color url(../img/pattern-icon.png);
+		background-size: cover;
+		position: relative;
+		.inner{
+			max-width: 500px;
+			padding: 15px 10px;
+			.title{
+				font-weight: 700;
+				font-size: 16px; 
+				position: absolute;
+				width: 120px;
+				top: 50%;
+				-ms-transform: translate(0, -50%); /* IE 9 */
+			   	-webkit-transform: translate(0, -50%); /* Safari */
+			    transform: translate(0, -50%);
+			}
+			.content{
+				margin-left: 130px;
+			}
+		}
+	}
+}
+

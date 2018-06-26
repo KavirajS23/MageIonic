@@ -1,0 +1,35 @@
+<ion-view title="{{pageTitle}}">
+	<ion-nav-buttons side="left">
+		<!-- Toggle left side menu -->
+		<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+	</ion-nav-buttons>
+	<ion-content class="has-footer">
+		<ion-slide-box  class="home-slider" on-slide-changed="slideHasChanged($index)">
+			<ion-slide class="slide-item" ng-if="!enableSliderFromServer" ng-repeat="i in [1, 2, 3, 4, 5]">
+				<div class="slider-img">
+					<img actual-src="img/victory/slider-1.jpg" ng-src="img/placeholder.png" alt="">
+				</div>
+			</ion-slide>
+			<ion-slide ng-if="enableSliderFromServer" ng-repeat="slider in sliderList">
+				<div class="slider-img">
+					<img actual-src="{{slider.src}}" ng-src="" alt="">
+				</div>
+			</ion-slide>
+		</ion-slide-box>
+		<div class="category-list clearfix">
+			<div class="row">
+				<div class="col col-50" ng-repeat="category in categoryData">
+					<div class="category-item clearfix animated zoomIn" ng-click="openCategory({{category.id}})">
+						<div class="image">
+							<img actual-src="{{category.image.src}}" ng-src="img/placeholder.png">	
+						</div>
+						<div class="title">
+							<div class="title-head" ng-bind-html="category.name"></div>
+							<div class="title-list">1000 item</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

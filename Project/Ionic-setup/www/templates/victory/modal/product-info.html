@@ -1,0 +1,35 @@
+<ion-modal-view class="modal-product-info">
+	<ion-header-bar>
+		<div class="buttons">
+    		<button class="button button-clear" ng-click="closeModalInfo()">
+    			<i class="ion-android-close"></i>
+    		</button>
+	  	</div>
+      	<h1 class="title">{{$root.appLanguage.REVIEWS_TEXT}}</h1>
+    </ion-header-bar>
+	<ion-tabs class="tabs-top tabs-color-positive tab-review">
+		<ion-tab on-select="loadReview()">
+			<div class="tab-content reviews">
+				<div class="inner">
+					<ion-content class="padding">
+						<div class="review-item" ng-repeat="review in reviews">
+							<div class="avatar">
+								<img actual-src="{{ review.link_avatar }}" ng-src="img/placeholder.png">
+							</div>
+							<div class="content">
+								<div class="star-rating" ng-bind-html="renderRatting(review.rating)"></div>
+								<span class="name">{{ review.name }}</span> - <span class="date" date="{{ review.date_created }}"></span>
+								<div class="comment">
+									{{ review.review }}
+								</div>
+							</div>
+						</div>
+					</ion-content>
+					<ion-footer-bar style="height: 150px;">
+    					<button id="addtocart" class="button button-block button-positive" ng-click="openModalAddReview()">{{$root.appLanguage.ADD_REVIEW_TEXT}}</button>
+  					</ion-footer-bar>
+				</div>
+			</div>
+		</ion-tab>
+	</ion-tabs>
+</ion-modal-view>

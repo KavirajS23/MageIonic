@@ -1,0 +1,38 @@
+<ion-modal-view class="add-review is-modal">
+    <ion-header-bar align-title="center">
+		<div class="buttons">
+			<button class="button button-clear" ng-click="closeModalCloseReview()">
+				<i class="ion-android-close"></i>
+			</button>
+		</div>
+		<h1 class="title">{{$root.appLanguage.ADD_REVIEW_TEXT}}</h1>
+    </ion-header-bar>
+    <ion-content style="background: #eff5f6">
+		<div class="your-rate">
+			<ionic-ratings ratingsobj='ratingsObject'></ionic-ratings>
+		</div>
+		<form name="reviewSubmitForm" ng-submit="submitProductReview(reviewSubmitForm)" novalidate="" class="clearfix">
+			<div class="list">
+				<label class="item item-input info-review" ng-if="isLoggedIn()===false">
+					<input type="text" name="first_name" ng-model="reviewSubmitFormData.first_name" placeholder="{{$root.appLanguage.FIRST_NAME_TEXT}}  *" required>
+				</label>
+				<div class="invalid-required" ng-show="reviewSubmitForm.first_name.$error.required && reviewSubmitForm.$submitted">* {{$root.appLanguage.FIRST_NAME_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+				<label class="item item-input info-review" ng-if="isLoggedIn()===false">
+					<input type="text" name="last_name" ng-model="reviewSubmitFormData.last_name" placeholder="{{$root.appLanguage.LAST_NAME_TEXT}} *" required>
+				</label>
+				<div class="invalid-required" ng-show="reviewSubmitForm.last_name.$error.required && reviewSubmitForm.$submitted">* {{$root.appLanguage.LAST_NAME_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+				<label class="item item-input info-review" ng-if="isLoggedIn()===false">
+					<input type="email" name="email" ng-model="reviewSubmitFormData.user_email" placeholder="{{$root.appLanguage.EMAIL_TEXT}} *" required>
+				</label>
+				<div class="invalid-required" ng-show="reviewSubmitForm.email.$error.required && reviewSubmitForm.$submitted">* {{$root.appLanguage.EMAIL_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+				<label class="item item-input">
+					<textarea ng-model="reviewSubmitFormData.comment" name="comment" rows="8" placeholder="Your review *" required></textarea>
+				</label>
+				<div class="invalid-required" ng-show="reviewSubmitForm.comment.$error.required && reviewSubmitForm.$submitted">* Your review {{$root.appLanguage.is_required_TEXT}}</div>
+			</div>
+			<div class="footer-bar">
+				<button id="addtocart" class="button button-block button-positive" type="submit">{{$root.appLanguage.SUBMIT_TEXT}}</button>
+			</div>
+		</form>
+    </ion-content>
+</ion-modal-view>

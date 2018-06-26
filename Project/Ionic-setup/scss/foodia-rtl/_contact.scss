@@ -1,0 +1,62 @@
+.contact-us-page{
+	map{
+		position: absolute;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    height: 100%;
+	    width: 100%;
+	    display: block;
+	}
+
+	.bar-footer{
+		padding: 0;
+		.button{
+			display: block;
+			width: 50%;
+			height: 100%;
+			float: left;
+			top:0 !important;
+			padding: 0;
+		    text-transform: uppercase;
+		    font-weight: 700;
+		    i{
+		    	font-size: 17px;
+		    	position: relative;
+		    	top: 2px;
+		    	margin-right: 3px;
+		    }
+		}
+		.button-right {
+			right:50% !important;
+		}
+	}
+
+	.button-info{
+		color: $title-color;
+		display: block;
+		width: 40px;
+		padding:0 5px;
+		border: 2px solid $title-color;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		z-index: 200;
+		background: #fff;
+	}
+}
+
+// Contact
+.modal-contact{
+	// margin-top: 100px;
+	background: rgba(#fff, 0.85);
+	.bar-header{
+		.button{
+		    position: absolute;
+		    top: 0!important;
+		    right: 0!important;
+		    height: 100%;
+		    width: 43px;
+		}
+	}
+}

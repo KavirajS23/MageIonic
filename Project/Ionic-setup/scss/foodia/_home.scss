@@ -1,0 +1,142 @@
+.home-logo{
+	max-width: 100px;
+	max-height: 33px;
+	vertical-align: middle;
+}
+
+.home-page{
+
+	.home-title{
+		font-size: 16px;
+		text-transform: uppercase;
+		margin: 0 0 15px 5px ;
+		color: #222222;
+	}
+	
+	.category-list{
+		margin-top: 30px;
+	}
+	
+	.home-slider{
+		.slider-img{
+			img{
+				max-width: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+		}
+
+		.slider-pager{
+			.slider-pager-page{
+				color: #fff;
+				opacity: 0.4;
+				.icon{
+					&:before{
+						content: "\f401";
+					}
+				}
+				&.active{
+					opacity: 1;
+					.icon:before{
+						content: "\f400";
+					}
+				}
+			}
+		}
+	}
+
+	.ads-text{
+		color: #fff;
+		background: $main-color url(../img/pattern-icon.png);
+		background-size: cover;
+		position: relative;
+		.inner{
+			padding: 20px 10px;
+			.content{
+				font-size: 18px;
+				line-height: 21px;
+			}
+			.title{
+				color: #5e4215;
+				font-size: 12px;
+				padding-top: 3px;
+			}
+			i{
+				margin-right: 5px;
+			}
+		}
+	}
+	.product-list-slider-style{
+		height: 250px;
+		padding: 20px 15px;
+		.product-item-slider-style{
+			width: 33.33333%;
+			position: relative;
+			display: block;
+			padding: 0 5px;
+			text-decoration: none;
+			float: left;
+			margin-bottom: 10px;
+			border: 0;
+			background: transparent;
+			margin-bottom: 10px;
+			img{
+				max-width: 100%;
+				display: block;
+				margin: 0 auto 5px;
+			}
+			.meta{
+				margin-top: 10px;
+			}
+		}
+		.swiper-container-horizontal > .swiper-pagination{
+			bottom: 30px;
+		}
+		.swiper-pagination-bullet{
+			border: 1px solid #000;
+			background: #fff;
+		}
+		.swiper-pagination-bullet-active{
+			background: rgba(0,0,0,0.5);
+			border-color: rgba(0,0,0,0.3);
+		}
+	}
+}
+.category-list,
+.product-item-slider-style {
+	.category{
+		color: #bbbbbb;
+		text-transform: uppercase;
+		font-size: 10px;
+	}
+	.name{
+		font-size: 14px;
+		font-weight: 300;
+		margin-bottom: 0;
+		margin-top: 0;
+		text-transform: capitalize;
+		a{
+			color: #222222;
+			text-decoration: none;
+		}
+	}
+	.price{
+		font-weight: 400;
+		color: #de242d;
+		font-size: 16px;
+		letter-spacing: -1px;
+		del,ins{
+			display: inline-block;
+			padding: 0 2px;
+		}
+		del{
+			font-weight: 400;
+			font-size: 0.8em;
+			opacity: 0.6;
+		}
+		ins{
+			text-decoration: none;
+		}
+	}
+
+}

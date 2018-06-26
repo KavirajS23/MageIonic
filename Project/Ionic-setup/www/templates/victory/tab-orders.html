@@ -1,0 +1,36 @@
+<ion-view title="{{$root.appLanguage.MY_ORDERS_TEXT}}" class="list-order-page">
+	<ion-content>
+		<ion-list class="list-orders">
+			<ion-item style="background: #eff5f6;" class="orders header">
+				<div class="row">
+					<div class="col text-left">Order</div>
+					<div class="col-33 text-center"><div class="inner">Date</div></div>
+					<div class="col-33 text-center"><div class="inner">Status</div></div>
+					<div class="col text-right">{{$root.appLanguage.TOTAL_TEXT}}</div>
+				</div>
+			</ion-item>
+		  	<ion-item ng-repeat="order in listOrderData" ng-class="order.status" ng-click="openSingleOrder({{order.id}})" class="orders-status">
+		  		<div class="row">
+		  			<div class="col text-left">
+						<a style="color:#000;" class="link-detail">#{{order.id}}</a>
+					</div>
+					<div class="col-33 text-center">
+						<div class="inner">
+							<span class="date" date="{{ order.date_created }}"></span>
+						</div>
+					</div>
+					<div class="col-33 text-center">
+						<div class="inner">
+							<span class="status">
+								{{ order.status_text }}
+							</span>
+						</div>
+					</div>
+					<div class="col text-right">
+						<span class="status-price" price="{{ order.total }}"></span>
+					</div>
+		  		</div>
+		  	</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

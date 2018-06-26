@@ -1,0 +1,22 @@
+.banner-item{
+	position: relative;
+	height: 150px;
+	img{
+		height: 100%;
+	}
+	.btn-transparent{
+		position: absolute;
+		top: 50%;
+		transform: translate(0, -50%);
+		border: 2px solid #fff;
+		padding: 5px;
+		width: 150px;
+		text-transform: uppercase;
+		text-align: center;
+		color: #fff;
+		margin: 0 auto;
+		text-decoration: none;
+		left: 0;
+		right: 0;
+	}
+}

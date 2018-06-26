@@ -1,0 +1,44 @@
+.pull-right{
+	float: right;
+}
+.pull-left{
+	float: left;
+}
+.text-center{
+	text-align: center;
+}
+.text-left{
+	text-align: left;
+}
+.text-right{
+	text-align: right;
+}
+.btn-login{
+	background-color: $button-color !important;
+	font-size: 16px;
+	color: #ffffff;
+}
+.button{
+	font-size: 16px !important;
+	font-weight: 300 !important;
+}
+
+.tab-item .icon{
+	margin-top: 12px;
+	height: 20px;
+	font-size: 25px;
+}
+.tabs-color-active-positive .tab-item.tab-item-active{
+	border-bottom: 5px solid $button-color;
+}
+.bar.bar-stable{
+	background-color: $button-color;
+	color: #fff;
+	.title, button{
+		color: #fff;
+	}
+}
+input[type=checkbox]{
+	width: 18px;
+	height: 18px;
+}

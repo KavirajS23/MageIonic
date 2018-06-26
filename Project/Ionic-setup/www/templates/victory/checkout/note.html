@@ -1,0 +1,88 @@
+<ion-view title="{{$root.appLanguage.ORDER_NOTE_TEXT}}" class="checkout checkout-billing" hide-tabs>
+	<ion-content>
+		<ion-list>
+			<ion-item>
+				<label class="item item-input">
+					<textarea rows="6" ng-model="orderInfo.orderNote" placeholder="{{$root.appLanguage.NOTES_ABOUT_YOUR_ORDER_TEXT}}."></textarea>
+				</label>
+			</ion-item>
+			<ion-checkbox ng-model="check_different_address" ng-value="1">{{$root.appLanguage.SHIP_TO_A_DIFFERENT_ADDRESS_TEXT}}?</ion-checkbox>
+		</ion-list>
+
+		<ion-list ng-if="check_different_address==1">
+			<label class="item item-input">
+				<div class="input-label">
+					{{$root.appLanguage.FIRST_NAME_TEXT}} *
+				</div>
+				<input type="text" name="first_name" ng-model="userInfo.shipping.first_name">
+			</label>
+			<label class="item item-input">
+				<div class="input-label">
+					{{$root.appLanguage.LAST_NAME_TEXT}} *
+				</div>
+				<input type="text" name="last_name" ng-model="userInfo.shipping.last_name">
+			</label>
+			<label class="item item-input">
+				<div class="input-label">
+					{{$root.appLanguage.COMPANY_NAME_TEXT}}
+				</div>
+				<input type="text" name="company" ng-model="userInfo.shipping.company">
+			</label>
+			<label class="item item-input item-select">
+				<div class="input-label">
+					{{$root.appLanguage.COUNTRY_TEXT}} *
+				</div>
+				<select name="country" ng-change="changeCountry()" ng-model="userInfo.shipping.country">
+					<option value="">Select a country</option>
+					<option ng-repeat="country in listCountry" value="{{country.id}}" ng-bind-html="country.name"></option>
+				</select>
+			</label>
+
+			<label class="item item-input">
+				<div class="input-label">
+					{{$root.appLanguage.ADDRESS_TEXT}} 1 *
+				</div>
+				<input type="text" name="address_1" placeholder="Street address" ng-model="userInfo.shipping.address_1">
+			</label>
+
+			<label class="item item-input">
+				<div class="input-label">
+					{{$root.appLanguage.ADDRESS_TEXT}} 2
+				</div>
+				<input type="text" name="address_2" placeholder="Apartment, suite, unit etc. (optional)"  ng-model="userInfo.shipping.address_2">
+			</label>
+			<label class="item item-input">
+				<div class="input-label">
+					{{$root.appLanguage.TOWN_CITY_TEXT}} *
+				</div>
+				<input type="text" name="city" ng-model="userInfo.shipping.city">
+			</label>
+			<label class="item item-input item-select" ng-if="checkCountryHasState() === true">
+				<div class="input-label">
+					{{$root.appLanguage.STATE_TEXT}} *
+				</div>
+				<select name="state" ng-model="userInfo.shipping.state">
+					<option value="">{{$root.appLanguage.SELECT_A_STATE_TEXT}}</option>
+					<option ng-repeat="(key, state) in listState" value="{{key}}" ng-bind-html="state"></option>
+				</select>
+			</label>
+			<label class="item item-input" ng-if="checkCountryHasState() === false">
+				<div class="input-label">
+					{{$root.appLanguage.STATE_TEXT}} *
+				</div>
+				<input type="text" name="state" ng-model="userInfo.shipping.state">
+			</label>
+
+			<label class="item item-input">
+				<div class="input-label">
+					{{$root.appLanguage.ZIP_TEXT}} *
+				</div>
+				<input type="text" name="postcode" ng-model="userInfo.shipping.postcode">
+			</label>
+
+		</ion-list>
+	</ion-content>
+	<ion-footer-bar>
+		<button ng-click="nextStep()" class="button button-positive">{{$root.appLanguage.NEXT_TEXT}}</button>
+	</ion-footer-bar>
+</ion-view>

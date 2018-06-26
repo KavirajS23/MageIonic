@@ -1,0 +1,79 @@
+.pull-right{
+	float: right;
+}
+.pull-left{
+	float: left;
+}
+.text-center{
+	text-align: center;
+}
+.text-left{
+	text-align: left;
+}
+.text-right{
+	text-align: left;
+	.status-price{
+		color:#25e393;
+	}
+}
+.btn-login{
+	background-color: #102532 !important;
+	font-size: 16px;
+	color: #ffffff;
+}
+.button{
+	font-size: 13px !important;
+	font-weight: 300 !important;
+}
+
+.tab-item .icon{
+	margin-top: 12px;
+	height: 20px;
+	font-size: 25px;
+}
+
+.bar.bar-stable{
+	background-color: #102532;
+	color: #fff;
+	.title, button{
+		color: #fff;
+	}
+}
+.bar{
+	.buttons-right{
+		right: 75%!important;
+	}
+}
+input[type=checkbox]{
+	width: 18px;
+	height: 18px;
+}
+.logo{
+	text-align:center;
+}
+.ion-record:before{
+		content: "\f209";
+}
+input[type="text"].login,input[type="password"].login{
+  padding-bottom:10px;
+}
+input[type="search"]{
+  color:#000;
+}
+.tab-detail.tab-account textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  color: #000;
+}

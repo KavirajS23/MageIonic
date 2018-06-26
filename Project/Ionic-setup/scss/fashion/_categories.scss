@@ -1,0 +1,48 @@
+.category-list{
+	padding: 10px 5px;
+	.category-item{
+		text-align: center;
+		width: 33.3333%;
+		position: relative;
+		display: block;
+		padding: 0 5px;
+		text-decoration: none;
+		float: left;
+		margin-bottom: 10px;
+		border: 0;
+		background: transparent;
+		&:nth-child(3n+1){
+			clear: left;
+		}
+
+		.image{
+			width: 70%;
+			margin: 0 auto;
+			position: relative;
+			margin-bottom: 5px;
+			&:after{
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				width: 100%;
+				height: 100%;
+				border: 5px solid rgba(#000, 0.4);
+				content: "";
+				display: block;
+				border-radius: 100%;
+			}
+			img{
+				width: 100%;
+				border-radius: 100%;
+				display: block;
+			}
+		}
+
+		.title{
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+	}
+}

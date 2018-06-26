@@ -1,0 +1,61 @@
+.is-header{
+	.shoppingcart{
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		margin-right: 10px;
+		position: relative;
+		i{
+			line-height: 27px;
+		    font-size: 27px;
+		    color: $text-color;
+		    display: inline-block;
+		    margin-top: 3px;
+		}
+		.count{
+			position: absolute;
+			display: block;
+			min-width: 15px;
+			height: 15px;
+			background: $main-color;
+			border-radius: 50%;
+			color: #fff;
+			font-size: 10px;
+			line-height: 15px;
+			top: 2px;
+    		right: -8px;
+		}	
+	}
+
+	.wishlist{
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		margin-right: 5px;
+		position: relative;
+		i{
+			line-height: 27px;
+		    font-size: 27px;
+		    color: $text-color;
+		    display: inline-block;
+		    margin-top: 3px;
+		}
+		.count{
+			position: absolute;
+			display: block;
+			min-width: 15px;
+			height: 15px;
+			background: $main-color;
+			border-radius: 50%;
+			color: #fff;
+			font-size: 10px;
+			line-height: 15px;
+			top: 2px;
+    		right: -8px;
+		}	
+	}
+
+	.bar-stable .button.button-clear{
+		color: $text-color;
+	}
+}

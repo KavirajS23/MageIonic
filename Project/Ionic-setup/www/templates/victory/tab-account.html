@@ -1,0 +1,296 @@
+<ion-view class="account-page" hide-tabs>
+	<ion-nav-title>{{$root.appLanguage.MY_ACCOUNT_TEXT}}</ion-nav-title>
+	<ion-tabs class="tabs-top tabs-striped">
+		<ion-tab title="{{$root.appLanguage.DETAILS_TEXT}}">
+			<ion-view class="tab-detail">
+				<form name="editAccountForm" ng-submit="doEditAccount(editAccountForm)" novalidate="">
+					<ion-content class="tab-detail tab-account">
+						<ion-list>
+							<label class="item item-input">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.FIRST_NAME_TEXT}} *
+									</div>
+									<input type="text" name="first_name" ng-model="userInfo.first_name" required>
+								</div>
+								<div class="invalid-required" ng-show="editAccountForm.first_name.$error.required && editAccountForm.$submitted">* {{$root.appLanguage.FIRST_NAME_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+							<label class="item item-input">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.LAST_NAME_TEXT}} *
+									</div>
+									<input type="text" name="last_name" ng-model="userInfo.last_name" required>
+								</div>
+								<div class="invalid-required" ng-show="editAccountForm.last_name.$error.required && editAccountForm.$submitted">* {{$root.appLanguage.LAST_NAME_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+							<label class="item item-input">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.EMAIL_TEXT}} *
+									</div>
+									<input type="email" name="email" ng-model="userInfo.email" required>
+								</div>
+								<div class="invalid-required" ng-show="editAccountForm.email.$error.required && editAccountForm.$submitted">* {{$root.appLanguage.EMAIL_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+						</ion-list>
+						<h1 class="title">
+							Password Change
+						</h1>
+						<ion-list class="password-change">
+							<label class="item item-input item-stacked-label">
+								<span class="input-label">Current Password</span>
+								<input type="password" name="password" ng-model="userInfo.password" placeholder="leave blank to leave unchanged">
+							</label>
+							<label class="item item-input item-stacked-label">
+								<span class="input-label">New Password</span>
+								<input type="password" name="new_password" ng-model="userInfo.newpassword" placeholder="leave blank to leave unchanged">
+								<div class="invalid-required" ng-show="editAccountForm.new_password.$error.required">* New Password {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+							<label class="item item-input item-stacked-label">
+								<span class="input-label">Confirm New Password</span>
+								<input type="password" name="confirm_new_password" ng-model="userInfo.confirmnewpassword">
+								<div class="invalid-required" ng-show="editAccountForm.confirm_new_password.$error.required">* New password does not match the confirm new password</div>
+							</label>
+						</ion-list>
+					</ion-content>
+					<ion-footer-bar>
+						<button class="button button-positive button-save" type="submit">{{$root.appLanguage.SAVE_CHANGES_TEXT}}</button>
+					</ion-footer-bar>
+				</form>
+			</ion-view>
+		</ion-tab>
+		<ion-tab title="{{$root.appLanguage.BILLING_TEXT}}">
+			<ion-view class="tab-billing">
+				<form name="billingInfoForm" ng-submit="updateUserBillingInfo(billingInfoForm)" novalidate="">
+					<ion-content>
+						<ion-list>
+							<label class="item item-input">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.FIRST_NAME_TEXT}} *
+									</div>
+									<input type="text" name="first_name" ng-model="userInfo.billing.first_name" required>
+								</div>
+								<div class="invalid-required" ng-show="billingInfoForm.first_name.$error.required && billingInfoForm.$submitted">* {{$root.appLanguage.FIRST_NAME_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+							<label class="item item-input">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.LAST_NAME_TEXT}} *
+									</div>
+									<input type="text" name="last_name" ng-model="userInfo.billing.last_name" required>
+								</div>
+								<div class="invalid-required" ng-show="billingInfoForm.last_name.$error.required && billingInfoForm.$submitted">* {{$root.appLanguage.LAST_NAME_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+							<label class="item item-input">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.COMPANY_NAME_TEXT}}
+									</div>
+									<input type="text" name="company" ng-model="userInfo.billing.company">
+								</div>
+							</label>
+							<label class="item item-input">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.EMAIL_TEXT}} *
+									</div>
+									<input type="email" name="email" ng-model="userInfo.billing.email" required>
+								</div>
+								<div class="invalid-required" ng-show="billingInfoForm.email.$error.required && billingInfoForm.$submitted">* {{$root.appLanguage.EMAIL_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+							<label class="item item-input">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.PHONE_TEXT}} *
+									</div>
+									<input type="text" name="phone" ng-model="userInfo.billing.phone" required>
+								</div>
+								<div class="invalid-required" ng-show="billingInfoForm.phone.$error.required && billingInfoForm.$submitted">* {{$root.appLanguage.PHONE_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+							<label class="item item-input item-select">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.COUNTRY_TEXT}} *
+									</div>
+									<select name="country" ng-change="changeBillingCountry()"  ng-model="userInfo.billing.country" required>
+										<option value="">Select a country</option>
+										<option ng-repeat="country in listCountry" value="{{country.id}}" ng-bind-html="country.name"></option>
+									</select>
+								</div>
+								<div class="invalid-required" ng-show="billingInfoForm.country.$error.required && billingInfoForm.$submitted">* {{$root.appLanguage.COUNTRY_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+							<label class="item item-input">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.ADDRESS_TEXT}} 1 *
+									</div>
+									<input type="text" name="address_1" placeholder="Street address" ng-model="userInfo.billing.address_1" required>
+								</div>
+								<div class="invalid-required" ng-show="billingInfoForm.address_1.$error.required && billingInfoForm.$submitted">* {{$root.appLanguage.ADDRESS_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+							<label class="item item-input">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.ADDRESS_TEXT}} 2
+									</div>
+									<input type="text" name="address_2" placeholder="Apartment, suite, unit etc. (optional)" ng-model="userInfo.billing.address_2">
+								</div>
+							</label>
+							<label class="item item-input">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.TOWN_CITY_TEXT}} *
+									</div>
+									<input type="text" name="city" ng-model="userInfo.billing.city" required>
+								</div>
+								<div class="invalid-required" ng-show="billingInfoForm.city.$error.required && billingInfoForm.$submitted">* {{$root.appLanguage.TOWN_CITY_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+							<label class="item item-input item-select" ng-if="checkBillingCountryHasState() === true">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.STATE_TEXT}} *
+									</div>
+									<select name="state" ng-model="userInfo.billing.state" required>
+										<option value="">{{$root.appLanguage.SELECT_A_STATE_TEXT}}</option>
+										<option ng-repeat="(key, state) in listState" value="{{key}}" ng-bind-html="state"></option>
+									</select>
+								</div>
+								<div class="invalid-required" ng-show="billingInfoForm.state.$error.required && billingInfoForm.$submitted">* {{$root.appLanguage.STATE_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+							<label class="item item-input" ng-if="checkBillingCountryHasState() === false">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.STATE_TEXT}} *
+									</div>
+									<input type="text" name="state" ng-model="userInfo.billing.state" required>
+								</div>
+								<div class="invalid-required" ng-show="billingInfoForm.state.$error.required && billingInfoForm.$submitted">* {{$root.appLanguage.STATE_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+							<label class="item item-input">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.ZIP_TEXT}} *
+									</div>
+									<input type="text" name="postcode" ng-model="userInfo.billing.postcode" required>
+								</div>
+								<div class="invalid-required" ng-show="billingInfoForm.postcode.$error.required && billingInfoForm.$submitted">* {{$root.appLanguage.ZIP_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+						</ion-list>
+					</ion-content>
+					<ion-footer-bar>
+						<button class="button button-positive" type="submit">{{$root.appLanguage.SAVE_CHANGES_TEXT}}</button>
+					</ion-footer-bar>
+				</form>
+			</ion-view>
+		</ion-tab>
+		<ion-tab title="{{$root.appLanguage.SHIPPING_TEXT}}">
+			<ion-view class="tab-shipping">
+				<form name="shippingInfoForm" ng-submit="updateUserShippingInfo(shippingInfoForm)" novalidate="">
+					<ion-content>
+						<ion-list>
+							<label class="item item-input">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.FIRST_NAME_TEXT}} *
+									</div>
+									<input type="text" name="first_name" ng-model="userInfo.shipping.first_name" required>
+								</div>
+								<div class="invalid-required" ng-show="shippingInfoForm.first_name.$error.required && shippingInfoForm.$submitted">* {{$root.appLanguage.FIRST_NAME_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+							<label class="item item-input">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.LAST_NAME_TEXT}} *
+									</div>
+									<input type="text" name="last_name" ng-model="userInfo.shipping.last_name" required>
+								</div>
+								<div class="invalid-required" ng-show="shippingInfoForm.last_name.$error.required && shippingInfoForm.$submitted">* {{$root.appLanguage.LAST_NAME_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+							<label class="item item-input">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.COMPANY_NAME_TEXT}}
+									</div>
+									<input type="text" name="company" ng-model="userInfo.shipping.company">
+								</div>
+							</label>
+							<label class="item item-input item-select">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.COUNTRY_TEXT}} *
+									</div>
+									<select name="country" ng-change="changeShippingCountry()" ng-model="userInfo.shipping.country" required>
+										<option value="">Select a country</option>
+										<option ng-repeat="country in listCountry" value="{{country.id}}" ng-bind-html="country.name"></option>
+									</select>
+								</div>
+								<div class="invalid-required" ng-show="shippingInfoForm.country.$error.required && shippingInfoForm.$submitted">* {{$root.appLanguage.COUNTRY_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+							<label class="item item-input">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.ADDRESS_TEXT}} 1 *
+									</div>
+									<input type="text" name="address_1" placeholder="Street address" ng-model="userInfo.shipping.address_1" required>
+								</div>
+								<div class="invalid-required" ng-show="shippingInfoForm.address_1.$error.required && shippingInfoForm.$submitted">* {{$root.appLanguage.ADDRESS_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+							<label class="item item-input">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.ADDRESS_TEXT}} 2
+									</div>
+									<input type="text" name="address_2" placeholder="Apartment, suite, unit etc. (optional)"  ng-model="userInfo.shipping.address_2">
+								</div>
+							</label>
+							<label class="item item-input">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.TOWN_CITY_TEXT}} *
+									</div>
+									<input type="text" name="city" ng-model="userInfo.shipping.city" required>
+								</div>
+								<div class="invalid-required" ng-show="shippingInfoForm.city.$error.required && shippingInfoForm.$submitted">* {{$root.appLanguage.TOWN_CITY_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+							<label class="item item-input item-select" ng-if="checkShippingCountryHasState() === true">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.STATE_TEXT}} *
+									</div>
+									<select name="state" ng-model="userInfo.shipping.state" required>
+										<option value="">{{$root.appLanguage.SELECT_A_STATE_TEXT}}</option>
+										<option ng-repeat="(key, state) in listState" value="{{key}}" ng-bind-html="state"></option>
+									</select>
+								</div>
+								<div class="invalid-required" ng-show="shippingInfoForm.state.$error.required && shippingInfoForm.$submitted">* {{$root.appLanguage.STATE_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+							<label class="item item-input" ng-if="checkShippingCountryHasState() === false">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.STATE_TEXT}} *
+									</div>
+									<input type="text" name="state" ng-model="userInfo.shipping.state" required>
+								</div>
+								<div class="invalid-required" ng-show="shippingInfoForm.state.$error.required && shippingInfoForm.$submitted">* {{$root.appLanguage.STATE_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+							<label class="item item-input">
+								<div class="inner">
+									<div class="input-label">
+										{{$root.appLanguage.ZIP_TEXT}} *
+									</div>
+									<input type="text" name="postcode" ng-model="userInfo.shipping.postcode" required>
+								</div>
+								<div class="invalid-required" ng-show="shippingInfoForm.postcode.$error.required && shippingInfoForm.$submitted">* {{$root.appLanguage.ZIP_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+							</label>
+						</ion-list>
+					</ion-content>
+					<ion-footer-bar class="account">
+						<button class="button button-positive account" type="submit">{{$root.appLanguage.SAVE_CHANGES_TEXT}}</button>
+					</ion-footer-bar>
+				</form>
+			</ion-view>
+		</ion-tab>
+	</ion-tabs>
+</ion-view>

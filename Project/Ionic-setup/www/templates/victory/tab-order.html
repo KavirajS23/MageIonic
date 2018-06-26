@@ -1,0 +1,150 @@
+<ion-view title="{{$root.appLanguage.ORDER_TEXT}} #{{ order.id }}" class="single-order-page" hide-tabs>
+	<ion-content>
+		<h1 class="title">Order Details</h1>
+		<ion-list>
+		  	<ion-item ng-repeat="item in order.line_items">
+				<div class="row">
+					<div class="col-75">
+						<strong class="name">{{item.name}}</strong> x <span class="quantity">{{item.quantity}}</span>
+					</div>
+					<div class="col-25 text-right">
+						<span class="price" price="{{item.subtotal}}"></span>
+					</div>
+				</div>
+		  	</ion-item>
+		  	<ion-item class="subtotal">
+		  		<div class="row">
+					<div class="col-50">
+						<strong>{{$root.appLanguage.SUBTOTAL_TEXT}}</strong>
+					</div>
+					<div class="col-50 text-right">
+						<span class="price" price="{{subTotal}}"></span>
+					</div>
+				</div>
+		  	</ion-item>
+		  	<ion-item class="payment-method">
+		  		<div class="row">
+					<div class="col-50">
+						<strong>Payment Method</strong>
+					</div>
+					<div class="col-50 text-right">
+						{{ order.payment_method_title }}
+					</div>
+				</div>
+		  	</ion-item>
+		  	<ion-item class="shipping">
+		  		<div class="row">
+					<div class="col-50">
+						<strong>{{$root.appLanguage.SHIPPING_TEXT}}</strong>
+					</div>
+					<div class="col-50 text-right">
+						<div class="method" ng-repeat="shipping in order.shipping_lines">
+							{{shipping.method_title}}
+						</div>
+					</div>
+				</div>
+		  	</ion-item>
+		  	<ion-item class="discount">
+		  		<div class="row">
+					<div class="col-50">
+						<strong>Discount</strong>
+					</div>
+					<div class="col-50 text-right">
+						-<span class="price" price="{{order.discount_total}}"></span>
+					</div>
+				</div>
+		  	</ion-item>
+		  	<ion-item class="total">
+		  		<div class="row">
+					<div class="col-50">
+						<strong>{{$root.appLanguage.TOTAL_TEXT}}</strong>
+					</div>
+					<div class="col-50 text-right">
+						<strong class="price" price="{{order.total}}"></strong>
+					</div>
+				</div>
+		  	</ion-item>
+		</ion-list>
+
+		<h1 class="title">Billing Address</h1>
+
+		<ion-list>
+		  	<ion-item>
+				<div class="row">
+					<div class="col-50">
+						Name:
+					</div>
+					<div class="col-50 text-right">
+						{{ order.billing.first_name }} {{ order.billing.last_name }}
+					</div>
+				</div>
+		  	</ion-item>
+
+		  	<ion-item>
+				<div class="row">
+					<div class="col-50">
+						{{$root.appLanguage.EMAIL_TEXT}}:
+					</div>
+					<div class="col-50 text-right">
+						{{ order.billing.email }}
+					</div>
+				</div>
+		  	</ion-item>
+
+		  	<ion-item>
+				<div class="row">
+					<div class="col-50">
+						{{$root.appLanguage.PHONE_TEXT}}:
+					</div>
+					<div class="col-50 text-right">
+						{{ order.billing.phone }}
+					</div>
+				</div>
+		  	</ion-item>
+
+		  	<ion-item>
+				<div class="row">
+					<div class="col-50">
+						{{$root.appLanguage.ADDRESS_TEXT}} 1:
+					</div>
+					<div class="col-50 text-right">
+						{{ order.billing.address_1 }}
+					</div>
+				</div>
+		  	</ion-item>
+
+		  	<ion-item>
+				<div class="row">
+					<div class="col-50">
+						{{$root.appLanguage.ADDRESS_TEXT}} 2:
+					</div>
+					<div class="col-50 text-right">
+						{{ order.billing.address_2 }}
+					</div>
+				</div>
+		  	</ion-item>
+
+		  	<ion-item>
+				<div class="row">
+					<div class="col-50">
+						{{$root.appLanguage.TOWN_CITY_TEXT}}:
+					</div>
+					<div class="col-50 text-right">
+						{{ order.billing.city }}
+					</div>
+				</div>
+		  	</ion-item>
+
+		  	<ion-item>
+				<div class="row">
+					<div class="col-50">
+						{{$root.appLanguage.COMPANY_NAME_TEXT}}:
+					</div>
+					<div class="col-50 text-right">
+						{{ order.billing.company }}
+					</div>
+				</div>
+		  	</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

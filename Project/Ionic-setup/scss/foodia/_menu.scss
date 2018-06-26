@@ -1,0 +1,152 @@
+$bg-slide-menu : #000;
+$color-slide-menu: #777;
+
+$bg-slide-menu-active: #2b333d;
+$border-slidemenu-active: #be3536;
+
+.is-slidemenu{
+	background: $bg-slide-menu;
+	color: $color-slide-menu;
+	.item{
+		background: transparent;
+		color: $color-slide-menu;
+		border: 0;
+		position: relative;
+		overflow: hidden;
+		[class*="icon"]{
+			margin-right: 20px;
+			position: relative;
+			top: 2px;
+			left: 5px;
+			font-size: 16px;
+			color: $button-color;
+		}
+
+		>a{
+			background: transparent;
+		}
+		
+		&:before{
+			content: "";
+			position: absolute;
+			display: block;
+		}
+		
+		&.active{
+			background: #222222;
+			border-color: #222222;
+			.item-content{
+				
+			}
+			&:before{
+				width: 5px;
+				height: 200px;
+				top: 0;
+				left: 0;
+				background: #be3536;
+				z-index: 12;
+			}
+		}
+		& + .item{
+			border-top: 1px solid #222222;		
+		}
+		&:hover{
+			background-color: #222222;
+		}
+	}
+
+	.header-menu{
+		background: rgba(#000, 0.6);
+		border-bottom: 0;
+		height: auto;
+		display: block;
+		.link{
+			color: #fff;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-weight: 700;
+			display: block;
+			position: relative;
+			padding: 24px 0;
+			&.login{
+				&:after{
+					content: "";
+					position: absolute;
+					width: 1px;
+					height: 28px;
+					background: #303842;
+					right: 0;
+					top: 50%;
+					margin-top: -14px;
+				}
+			}
+		}
+		// logged in
+		&.logged-in{
+			position: relative;
+			padding-bottom: 15px;
+			border-bottom: 1px solid #222222;
+			.link{
+				position: absolute;
+				top: 65px;
+				padding: 0;
+				font-size: 17px;
+				&.logout{
+					left: 40px;
+				}
+				&.notifation{
+					right: 40px;
+					width: 18px;
+					display: inline-block;
+					.count{
+						font-size: 12px;
+					    background: #ffd200;
+					    display: inline-block;
+					    border-radius: 10px;
+					    padding: 0 6px;
+					    position: relative;
+					    line-height: 17px;
+					    top: -32px;
+					    text-align: center;
+					    left: 16px;
+					}
+				}
+			}
+			.avatar{
+				display: block;
+				text-decoration: none;
+				width: 70px;
+				height: 70px;
+				border-radius: 100%;
+				margin: 0 auto;
+				overflow: hidden;
+				margin-top: 40px;
+				img{
+					max-width: 100%;
+					height: auto;
+				}
+			}
+			.info{
+				text-align: center;
+				.name,
+				.phone{
+					display: block;
+					color: #fff;
+				}
+				.name{
+					text-transform: uppercase;
+					margin: 10px 0 5px;
+					font-size: 15px;
+				}
+				.phone{
+					[class*="icon-"]{
+						display: inline-block;
+						margin-right: 4px;
+						position: relative;
+						top: 2px;
+					}
+				}
+			}
+		}
+	}
+}

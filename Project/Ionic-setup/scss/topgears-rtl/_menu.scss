@@ -1,0 +1,148 @@
+$bg-slide-menu : #fff;
+$color-slide-menu: #777;
+
+$bg-slide-menu-active: #2b333d;
+$border-slidemenu-active: #be3536;
+
+.is-slidemenu{
+	background: #eff5f6;
+	color: $color-slide-menu;
+	.item{
+		background: transparent;
+		color: $color-slide-menu;
+		border: 0;
+		position: relative;
+		overflow: hidden;
+		[class*="icon"]{
+			margin-left: 20px;
+			position: relative;
+			top: 2px;
+			left: 5px;
+			font-size: 16px;
+			color: #3be9c9;
+		}
+
+		>a{
+			background: transparent;
+			padding:16px!important;
+		}
+		
+		&:before{
+			content: "";
+			position: absolute;
+			display: block;
+		}
+		
+		&.active{
+			background: #222222;
+			border-color: #fff;
+			.item-content{
+				
+			}
+			&:before{
+				width: 5px;
+				height: 200px;
+				top: 0;
+				left: 0;
+				background: #be3536;
+				z-index: 12;
+			}
+		}
+		& + .item{
+			border-top: 1px solid #eff5f6;		
+		}
+		&:hover{
+			background-color: transparent;
+		}
+	}
+
+	.header-menu{
+		border-bottom: 0;
+		height: auto;
+		display: block;
+		.link{
+			color: #fff;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-weight: 700;
+			display: block;
+			position: relative;
+			padding: 24px 0;
+			&.login{
+				&:after{
+					content: "";
+					position: absolute;
+					width: 1px;
+					height: 28px;
+					background: #303842;
+					right: 0;
+					top: 50%;
+					margin-top: -14px;
+				}
+			}
+		}
+		// logged in
+		&.logged-in{
+			position: relative;
+			.link{
+				position: absolute;
+				top: 65px;
+				padding: 0;
+				font-size: 17px;
+				&.logout{
+					left: 40px;
+				}
+				&.notifation{
+					right: 40px;
+					width: 18px;
+					display: inline-block;
+					.count{
+						font-size: 12px;
+					    background: #ffd200;
+					    display: inline-block;
+					    border-radius: 10px;
+					    padding: 0 6px;
+					    position: relative;
+					    line-height: 17px;
+					    top: -32px;
+					    text-align: center;
+					    left: 16px;
+					}
+				}
+			}
+			.avatar{
+				text-decoration: none;
+				width: 70px;
+				height: 70px;
+				margin: 0 auto;
+				overflow: hidden;
+				margin-top: 40px;
+				img{
+					max-width: 100%;
+					height: auto;
+				}
+			}
+			.info{
+				text-align: center;
+				.name,
+				.phone{
+					display: block;
+					color: #fff;
+				}
+				.name{
+					text-transform: uppercase;
+					margin: 10px 0 5px;
+					font-size: 15px;
+				}
+				.phone{
+					[class*="icon-"]{
+						display: inline-block;
+						margin-right: 4px;
+						position: relative;
+						top: 2px;
+					}
+				}
+			}
+		}
+	}
+}

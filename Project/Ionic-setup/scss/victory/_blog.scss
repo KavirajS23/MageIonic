@@ -1,0 +1,182 @@
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+.alignleft {
+	float: left;
+	margin: 0.375em 1.75em 1.75em 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0.375em 0 1.75em 1.75em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto 1.75em;
+}
+
+blockquote.alignleft {
+	margin: 0.3157894737em 1.4736842105em 1.473684211em 0;
+}
+
+blockquote.alignright {
+	margin: 0.3157894737em 0 1.473684211em 1.4736842105em;
+}
+
+blockquote.aligncenter {
+	margin-bottom: 1.473684211em;
+}
+
+table,
+th,
+td {
+	border: 1px solid $border-color;
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+	border-width: 1px 0 0 1px;
+	margin: 0 0 1.75em;
+	table-layout: fixed;
+	/* Prevents HTML tables from becoming too wide */
+	width: 100%;
+}
+
+caption,
+th,
+td {
+	font-weight: normal;
+	text-align: left;
+}
+
+th {
+	border-width: 0 1px 1px 0;
+	font-weight: 700;
+}
+
+td {
+	border-width: 0 1px 1px 0;
+}
+
+th,
+td {
+	padding: 0.4375em;
+}
+
+
+ul,
+ol {
+	margin: 0 0 1.75em 1.25em;
+	padding: 0;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+	margin-left: 1.5em;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+}
+
+dl {
+	margin: 0 0 1.75em;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	margin: 0 0 1.75em;
+}
+
+.blog-container {
+	background-color: #eaeaea;
+}
+
+.blog-list {
+	padding: 15px;
+
+	.blog-item {
+		margin-bottom: 15px;
+		background-color: #fff;
+		border-radius: 5px;
+		.blog-content {
+			padding: 10px;
+			.title {
+				font-size: 18px;
+				margin-bottom: 5px;
+				cursor: pointer;
+			}
+			.post-meta {
+				margin-bottom: 20px;
+			}
+		}
+		.blog-action {
+			margin-top: 10px;
+			padding: 10px;
+			border-top: 1px solid #cccccc;
+			.ng-binding {
+				text-transform: uppercase;
+				text-align: left;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.blog-single-item {
+	.blog-content {
+		padding: 10px;
+		.title {
+			font-size: 18px;
+			margin-bottom: 5px;
+		}
+		.post-meta {
+			margin-bottom: 20px;
+		}
+	}
+	.blog-action {
+		margin-top: 10px;
+		padding: 10px;
+		border-top: 1px solid #cccccc;
+		border-bottom: 1px solid #cccccc;
+		.ng-binding {
+			text-transform: uppercase;
+			text-align: left;
+			cursor: pointer;
+		}
+	}
+	.blog-comments {
+		.comment-item {
+			padding: 10px;
+			border-bottom: 1px solid #cccccc;
+			@include clearfix();
+
+			.avatar{
+				float: left;
+				max-width: 80px;
+				img{
+					width: 100%;
+				}
+			}
+			.comment-content {
+				margin-left: 90px;
+				.author {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}

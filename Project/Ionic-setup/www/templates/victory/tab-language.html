@@ -1,0 +1,7 @@
+<ion-view class="language-page" title="{{$root.appLanguage.LANGUAGE_TEXT}}" hide-tabs>
+	<ion-content>
+		<ion-list>
+			<ion-radio ng-repeat="itemLanguage in listLanguage" ng-click="changeLanguage(itemLanguage.code)" ng-model="language" ng-value="itemLanguage.code">{{itemLanguage.text}}</ion-radio>
+		</ion-list>
+	</ion-content>
+</ion-view>

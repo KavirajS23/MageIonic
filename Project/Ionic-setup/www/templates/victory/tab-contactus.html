@@ -1,0 +1,29 @@
+<ion-view class="contact-us-page" title="{{$root.appLanguage.CONTACT_US_TEXT}}" hide-tabs>
+	<ion-content scroll="false">
+		<map center="{{ info_position }}" zoom="15">
+			<marker
+				id="marker_store"
+				position="{{ info_position }}"
+				title="{{ appSettings.contact_map_title }}"
+				on-click="showInfoWindow('window_store')"
+				visible="true">
+			</marker>
+			<info-window id="window_store" visible-on-marker="marker_store">
+				<div ng-non-bindable="">
+					<h5 class="title">{{ appSettings.contact_map_title }}</h5>
+					<div class="content" ng-bind-html="trustAsHtml(appSettings.contact_map_content)"></div>
+				</div>
+			</info-window>
+		</map>
+	</ion-content>
+	<ion-footer-bar>
+		<button class="button button-balanced" ng-click="callPhone();">
+			<i class="ion-ios-telephone"></i>
+			Call Now
+		</button>
+		<button class="button button-calm button-right" ng-click="sendMail();">
+			<i class="ion-ios-email"></i>
+			Mail Us
+		</button>
+	</ion-footer-bar>
+</ion-view>

@@ -1,0 +1,50 @@
+<ion-modal-view class="modal-register is-modal">
+    <ion-content class="model-content">
+	    <div class="logo logo-regis">
+	    	<button class=""><i class="icon ion-android-arrow-back"></i></button>
+	    	<h2 class="text-center">Create Account</h2>
+	    </div>
+		<div class="modal-login-box modal-regis-box list">
+			<form name="registerForm" ng-submit="doRegister(registerForm)" novalidate="">
+				<div class="form-action list">
+					<label class="item item-input login input-first">
+						<input class="login input-img input-forgot" type="text" name="first_name" ng-model="registerData.first_name" placeholder="{{$root.appLanguage.FIRST_NAME_TEXT}}" required>
+					</label>
+					<div class="invalid-required" ng-show="registerForm.first_name.$error.required && registerForm.$submitted">* {{$root.appLanguage.FIRST_NAME_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+					<label class="item item-input login">
+						<input class="login input-img" type="text" name="last_name" ng-model="registerData.last_name" placeholder="{{$root.appLanguage.LAST_NAME_TEXT}}" required>
+					</label>
+					<div class="invalid-required" ng-show="registerForm.last_name.$error.required && registerForm.$submitted">* {{$root.appLanguage.LAST_NAME_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+
+					<label class="item item-input login">
+						<input class="login input-img" type="email" name="user_email" ng-model="registerData.user_email" placeholder="{{$root.appLanguage.YOUR_EMAIL_TEXT}}" required>
+					</label>
+					<div class="invalid-required" ng-show="registerForm.user_email.$error.required && registerForm.$submitted">* {{$root.appLanguage.EMAIL_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+					<div class="invalid-required" ng-show="registerForm.user_email.$error.email && registerForm.$submitted">* {{$root.appLanguage.EMAIL_TEXT}} is not correct</div>
+
+					<label class="item item-input login">
+						<input class="login input-img" type="password" name="user_pass" ng-model="registerData.user_pass" placeholder="Password" required>
+					</label>
+					<div class="invalid-required" ng-show="registerForm.user_pass.$error.required && registerForm.$submitted">
+					* {{$root.appLanguage.PASSWORD_TEXT}} {{$root.appLanguage.is_required_TEXT}}
+					</div>
+
+					<label class="item item-input login">
+						<input class="login input-img" type="password" name="user_confirmpass" ng-model="registerData.user_confirmpass" placeholder="Password" required>
+					</label>
+					<div class="invalid-required" ng-show="registerForm.user_confirmpass.$error.required && registerForm.$submitted">*{{$root.appLanguage.CONFIRM_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+					<div class="buttons button-action item">
+						<button class="button button-block"><!-- {{$root.appLanguage.SIGNUP_TEXT}} -->Create Account
+						</button>
+					</div>
+					<div class="buttons sign-up" >
+					Already have an account?
+						<a class="button-close" ng-click="closeModalRegister()">
+							<span class="text-centent">{{$root.appLanguage.SIGNIN_TEXT}}</span>
+						</a>
+					</div>
+				</div>
+			</form>
+		</div>
+    </ion-content>
+</ion-modal-view>

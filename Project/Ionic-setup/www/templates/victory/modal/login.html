@@ -1,0 +1,44 @@
+<ion-modal-view class="modal-login is-modal" style="padding: 0;margin: 0;">
+    <ion-content class="model-content">
+	    <div style="padding-bottom: 10px" class="logo">
+	    	<img src="img/victory/logo.png" alt="">
+	    </div>
+		<div class="modal-login-box list ">
+			<form name="loginForm" class="form-style" ng-submit="doLogin(loginForm)" novalidate="">
+				<div class="form-action">
+					<label class="item item-input login input-first">
+						<input class="login input-img input-forgot" type="text" name="user_login" ng-model="loginData.user_login" required placeholder="{{$root.appLanguage.USERNAME_TEXT}}">
+					</label>
+					<div class="invalid-required" ng-show="loginForm.user_login.$error.required && loginForm.$submitted">* {{$root.appLanguage.USERNAME_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+					<label class="item item-input login">
+						<input class="login input-img" type="password" name="user_pass" ng-model="loginData.user_pass" placeholder="{{$root.appLanguage.PASSWORD_TEXT}}" required>
+					</label>
+					<div class="invalid-required" ng-show="loginForm.user_pass.$error.required && loginForm.$submitted">* {{$root.appLanguage.PASSWORD_TEXT}} {{$root.appLanguage.is_required_TEXT}}</div>
+					
+					<div class="button-action item">
+						<button style="letter-spacing: -0.6px; text-transform: capitalize!important;" class="button button-block" type="submit">{{$root.appLanguage.LOGIN_TEXT}}</button>
+					</div>
+				</div>
+			</form>		
+		</div>
+		<!-- <div class="social-action clearfix">
+            <div class="social-fb" ng-click="doLoginWithFacebook()">
+				<a href="#">
+					<span class="text">{{$root.appLanguage.SIGN_IN}}{{$root.appLanguage.FACEBOOK}}</span>
+				</a>
+			</div>
+                        <div class="social-gg" ng-click="doLoginWithGoogle()">
+				<a href="#">
+					<span class="text">{{$root.appLanguage.SIGN_IN}}{{$root.appLanguage.GOOGLE}}</span> 
+				</a>
+			</div>
+		</div> -->
+		<div class="create-user-action buttons row">
+			<div class="buttons col col-50 creat" style="color: #fff" class="" ng-click="openModalRegister()">
+				{{$root.appLanguage.CREATE_ACCOUNT_TEXT}}
+			</div>
+			<div class="forgot-password buttons col col-50" ng-click="openModalForgotPassword()">{{$root.appLanguage.FORGOT_PASSSWORD_TEXT}}</div>
+		</div>
+	
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,46 @@
+<ion-modal-view class="add-review is-modal">
+    <ion-header-bar align-title="center">
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeAddComment()">
+                <i class="ion-android-close"></i>
+            </button>
+        </div>
+        <h1 class="title">{{$root.appLanguage.ADD_COMMENT_TEXT}}</h1>
+    </ion-header-bar>
+    <ion-content>
+        <form name="commentSubmitForm" ng-submit="submitComment(commentSubmitForm)" novalidate="">
+            <div class="list">
+                <label class="item item-input" ng-if="isLoggedIn()===false">
+                    <input type="text" name="name" ng-model="commentData.name"
+                           placeholder="{{$root.appLanguage.NAME_TEXT}} *" required>
+                </label>
+                <div class="invalid-required"
+                     ng-show="commentSubmitForm.name.$error.required && commentSubmitForm.$submitted">*
+                    {{$root.appLanguage.NAME_TEXT}} {{$root.appLanguage.is_required_TEXT}}
+                </div>
+
+                <label class="item item-input" ng-if="isLoggedIn()===false">
+                    <input type="email" name="email" ng-model="commentData.user_email"
+                           placeholder="{{$root.appLanguage.EMAIL_TEXT}} *" required>
+                </label>
+                <div class="invalid-required"
+                     ng-show="commentSubmitForm.email.$error.required && commentSubmitForm.$submitted">*
+                    {{$root.appLanguage.EMAIL_TEXT}} {{$root.appLanguage.is_required_TEXT}}
+                </div>
+
+                <label class="item item-input">
+                    <textarea ng-model="commentData.comment" name="comment" rows="8"
+                              placeholder="Your comment *" required></textarea>
+                </label>
+                <div class="invalid-required"
+                     ng-show="commentSubmitForm.comment.$error.required && commentSubmitForm.$submitted">* Your review
+                    {{$root.appLanguage.is_required_TEXT}}
+                </div>
+            </div>
+            <div class="padding">
+                <button class="button button-block button-positive" type="submit">{{$root.appLanguage.SUBMIT_TEXT}}
+                </button>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

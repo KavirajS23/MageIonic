@@ -1,0 +1,158 @@
+<ion-view class="checkout checkout-success" title="Order Received" hide-tabs>
+	<ion-content>
+		<ion-list>
+			<ion-item class="success text-center">
+				<p>Thank you. Your order has been received.</p>
+		  	</ion-item>
+				
+			<h1 class="title" ng-if="orderReceivedInfo.payment_method==='bacs'">Our Bank Details</h1>
+			<ion-list ng-if="orderReceivedInfo.payment_method==='bacs'" ng-repeat="bank in orderReceivedInfo.payment_method_data">
+				<ion-item class="text-center">
+					<strong class="name">{{bank.account_name}} - {{bank.bank_name}}</strong>
+				</ion-item>
+				<ion-item>
+					<div class="row">
+						<div class="col-50">
+							<strong>Account Number</strong>
+						</div>
+						<div class="col-50 text-right">
+							{{bank.account_number}}
+						</div>
+					</div>
+				</ion-item>
+				<ion-item>
+					<div class="row">
+						<div class="col-50">
+							<strong>Sort code</strong>
+						</div>
+						<div class="col-50 text-right">
+							{{bank.sort_code}}
+						</div>
+					</div>
+				</ion-item>
+				<ion-item>
+					<div class="row">
+						<div class="col-50">
+							<strong>IBAN</strong>
+						</div>
+						<div class="col-50 text-right">
+							{{bank.iban}}
+						</div>
+					</div>
+				</ion-item>
+				<ion-item>
+					<div class="row">
+						<div class="col-50">
+							<strong>BIC</strong>
+						</div>
+						<div class="col-50 text-right">
+							{{bank.bic}}
+						</div>
+					</div>
+				</ion-item>
+			</ion-list>
+			
+			<ion-list ng-if="orderReceivedInfo.payment_method==='bankwire'" ng-repeat="bank in orderReceivedInfo.payment_method_data">
+				<ion-item class="text-center">
+					<strong class="name">PLEASE SEND US A BANK WIRE WITH</strong>
+				</ion-item>
+				<ion-item>
+					<div class="row">
+						<div class="col-50">
+							<strong>Name of account owner</strong>
+						</div>
+						<div class="col-50 text-right">
+							{{bank.owner}}
+						</div>
+					</div>
+				</ion-item>
+				<ion-item>
+					<div class="row">
+						<div class="col-50">
+							<strong>Include these details</strong>
+						</div>
+						<div class="col-50 text-right">
+							{{bank.details}}
+						</div>
+					</div>
+				</ion-item>
+				<ion-item>
+					<div class="row">
+						<div class="col-50">
+							<strong>Bank name</strong>
+						</div>
+						<div class="col-50 text-right">
+							{{bank.address}}
+						</div>
+					</div>
+				</ion-item>
+			</ion-list>
+
+			<h1 class="title">Order Details</h1>
+			
+		  	<ion-item ng-repeat="item in orderReceivedInfo.line_items">
+				<div class="row">
+					<div class="col-75">
+						<strong class="name">{{item.name}}</strong> x <span class="quantity">{{item.quantity}}</span>
+					</div>
+					<div class="col-25 text-right">
+						<span class="price" price="{{item.subtotal}}"></span>
+					</div>
+				</div>
+		  	</ion-item>
+		  	<ion-item class="subtotal">
+		  		<div class="row">
+					<div class="col-50">
+						<strong>{{$root.appLanguage.SUBTOTAL_TEXT}}</strong>
+					</div>
+					<div class="col-50 text-right">
+						<span class="price" price="{{subTotal}}"></span>
+					</div>
+				</div>
+		  	</ion-item>
+		  	<ion-item class="payment-method">
+		  		<div class="row">
+					<div class="col-50">
+						<strong>Payment Method</strong>
+					</div>
+					<div class="col-50 text-right">
+						{{ orderReceivedInfo.payment_method_title }}
+					</div>
+				</div>
+		  	</ion-item>
+		  	<ion-item class="discount">
+		  		<div class="row">
+					<div class="col-50">
+						<strong>Discount</strong>
+					</div>
+					<div class="col-50 text-right">
+						- <span class="price" price="{{orderReceivedInfo.discount_total}}"></span>
+					</div>
+				</div>
+		  	</ion-item>
+			<ion-item class="shipping" ng-if="orderReceivedInfo.shipping_lines[0].total > 0">
+		  		<div class="row">
+					<div class="col-50">
+						<strong>{{$root.appLanguage.SHIPPING_TEXT}}</strong>
+					</div>
+					<div class="col-50 text-right">
+						<div class="method">
+							<span>{{ orderReceivedInfo.shipping_lines[0].method_title }}</span><span ng-if="orderReceivedInfo.shipping_lines[0].total > 0">: <span class='shipping_method_price' price='{{ orderReceivedInfo.shipping_lines[0].total }}'></span></span>
+						</div>
+					</div>
+				</div>
+		  	</ion-item>
+		  	<ion-item class="total">
+		  		<div class="row">
+					<div class="col-50">
+						<strong>{{$root.appLanguage.TOTAL_TEXT}}</strong>
+					</div>
+					<div class="col-50 text-right">
+						<strong class="price" price="{{orderReceivedInfo.total}}"></strong>
+					</div>
+				</div>
+		  	</ion-item>
+		</ion-list>
+		<button ng-click="goHomePage()" class="button button-positive shopping">{{$root.appLanguage.CONTINUE_SHOPPING_TEXT}}</button>
+	</ion-content>
+</ion-view>

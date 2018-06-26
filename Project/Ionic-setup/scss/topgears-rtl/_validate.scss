@@ -1,0 +1,30 @@
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+$main-color: #39e8c4;
+
+$title-color: #777777;
+$text-color: #8c95a3;
+
+$positive: $main-color;
+
+$base-color : $title-color;
+$border-color: #ddd;
+
+$border-radius-base: 0;
+$button-border-radius: 0;
+$button-color: #102532;
+$success-color:         #5cb85c !default;
+$success-bg:			#dff0d8 !default;
+
+$info-color:            #5bc0de !default;
+$info-bg: 				#d9edf7 !default;
+
+$warning-color:         #f0ad4e !default;
+$warning-bg:  			#fcf8e3 !default;
+
+$error-color:           #d9534f !default;
+$error-bg: 				#f2dede !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";

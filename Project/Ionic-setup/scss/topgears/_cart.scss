@@ -1,0 +1,137 @@
+.cart-page{
+	background-color: #eeeeee;
+	.cart-list-item{
+		.cart-item{
+			position: relative;
+			.row{
+				padding-bottom: 0;
+			}
+
+			.close{
+				position: absolute;
+				top: 41px;
+				right: 5px;
+				opacity: 0.3;
+				&:hover{
+					opacity: 1;
+				}
+			}
+			img{
+				max-width: 80%;
+			}
+
+			.product-info{	
+				.name{
+				    overflow: hidden;
+				    white-space: nowrap;
+				    text-overflow: ellipsis;
+				}
+				.product-name{
+					color: #777;
+					white-space: normal;
+					margin-right: 10px;
+					float: left;
+					width: 45%;
+					font-size: 14px;
+					.size, .color{
+						font-size: 12px;
+						color: #222222;
+						font-weight: 500;
+						span{
+							color: #777777;
+							font-weight: 300;
+						}
+					}
+				}
+				.item-input {
+					width: 40px;
+					padding: 0px;
+					text-align: center;
+					display: inline-block;
+					float: left;
+					border: 0;
+					margin-left:25px;
+					input {
+						padding: 0;
+						text-align: center;
+						color: #000;
+					}
+				}
+				.quantity{
+					font-size: 13px;
+					display: inline-block;
+					width: 50%;
+					text-align: center;
+					float:right;
+					.single-price-container {
+						margin-top: 7px;
+						margin-left: 100px;
+						color: #25e393;
+						font-size: 16px;
+						letter-spacing: -1px;
+						font-weight: 400;
+					}
+				}
+				.variable{
+					font-size: 12px;
+					text-transform: capitalize;
+				}
+			}
+			.count-cart, {
+				display: inline-block;
+			    width: 50%;
+			    float: left;	
+			    text-align: center;
+				padding: 10px 0;
+				font-weight: 700;
+			}
+			.total{
+				width: 50%;
+				color: #de242d;
+				font-size: 16px;
+				letter-spacing: -1px;
+				float: left;
+				padding-top: 10px;
+				text-align: center;
+			}
+		}
+	}
+
+	.has-footer{
+		bottom: 66px;
+	}
+
+	// Footer
+	.bar-footer{
+		padding: 0;
+		background: transparent;
+		margin-bottom: 30px;
+		.button-action{
+			width: 100%;
+			.button{
+				height: 80%;
+				width: 100%;
+				font-size: 18px;
+				text-transform: uppercase;
+				&.disable{
+					pointer-events: none;
+					// @include opacity(0.3);
+					background: #000;
+					opacity: 0.3;
+				}
+			}
+		}
+	}
+}
+.button.button-positive{
+	width:305px;
+	margin:0 auto;
+	border-radius:50px;
+	font-size: 16px!important;
+	height:50px;
+}
+.ion-trash-a{
+	margin:0 auto;
+	width:71px;
+	color:#fff;
+}

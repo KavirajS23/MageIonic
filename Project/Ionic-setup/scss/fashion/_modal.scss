@@ -1,0 +1,199 @@
+.is-modal{
+	.bar-header{
+		.button{
+			color: $text-color;
+			padding: 0 10px;
+			font-size: 28px;
+		}
+	}
+
+	.modal-inner{
+		// position: relative;
+	}
+}
+
+
+// Product Info Modal
+.modal-product-info{
+	// top: 100px;
+	background: rgba(#fff, 0.95);
+
+	.bar-header{
+		.button{
+			i{
+				color: $text-color;
+				font-size: 29px;
+			}
+		}
+	}
+
+	ion-tabs{
+		.tab-title{
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+
+		.description{
+			padding: 10px 0;
+		}
+		
+	}
+	.description,
+	.reviews{
+		.bar-footer{
+			padding: 0;
+			border: 0;
+			.button{
+				margin: 0;
+				text-transform: uppercase;
+				font-weight: 700;
+				[class*="ion-"]{
+					display: inline-block;
+					margin-right: 10px;
+					font-size: 16px;
+				}
+			}
+		}
+	}
+	.reviews{
+		.review-item{
+			padding: 10px 0;
+			border-bottom: 1px solid $border-color;
+			@include clearfix();
+			&:last-child{
+				border-bottom: 0;
+			}
+			.avatar{
+				float: left;
+				max-width: 80px;
+				img{
+					width: 100%;
+				}
+			}
+
+			.content{
+				margin-left: 90px;
+				.star-rating{
+					// margin-bottom: 5px;
+				}
+				.name{
+					font-weight: 700;
+					text-transform: uppercase;
+				}
+
+				.comment{
+					margin-top: 5px;
+				}
+			}
+		}
+	}
+}
+
+
+// Modal Login & Register
+
+.modal-login,
+.modal-register,
+.login-form{
+	.logo{
+		max-width: 75%;
+		margin: 0 auto;
+		padding: 50px 0;
+		img{
+			max-width: 150px;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+
+	.button-close{
+		position: absolute;
+		top: -10px;
+		left: -10px;	
+	}
+	ion-content{
+		.form-action{
+			margin: 0 30px;
+			.invalid-required{
+				margin-top: -20px;
+				margin-bottom: 20px;
+				color: #a94442;
+			}
+		}
+
+		.item-input{
+			margin-bottom: 25px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+
+		.button-action{
+			margin: 0 auto;
+			.forgot-password{
+				margin-top: 20px;
+				text-transform: uppercase;
+				font-weight: 700;
+				color: $title-color;
+				font-size: 12px;
+				text-align: center;
+			}
+		}
+
+		
+
+		.divider{
+			width: 100%;
+			border-bottom: 3px solid #eee;
+		}
+	}
+}
+
+.modal-login,
+.login-form{
+
+	ion-content{
+		.create-user-action{
+			margin: 50px 30px 0;
+			text-align: center;
+			.button,
+			.text{
+				margin-top: 15px;
+				text-transform: uppercase;
+				display: inline-block;
+				font-weight: 700;
+				font-size: 13px;
+			}
+			.text{
+				display: block;
+			}
+			.button{
+				background: #e8e9ea;
+			}
+		}
+	}
+}
+
+.add-review{
+	.list{
+		padding-top: 20px;
+		padding: 20px 10px 0;
+	}
+	.your-rate{
+		margin-top: 25px;
+		.ionic_ratings .icon{
+			font-size: 40px;
+			margin: 0 3px;
+		}
+	}
+
+	.item-input{
+		margin-bottom: 30px;
+	}
+	
+	.invalid-required{
+		margin-top: -20px;
+		margin-bottom: 20px;
+		color: #a94442;
+	}
+}
